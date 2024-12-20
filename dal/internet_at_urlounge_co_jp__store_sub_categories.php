@@ -1,0 +1,40 @@
+<?php
+$dalTablestore_sub_categories = array();
+$dalTablestore_sub_categories["id"] = array("type"=>3,"varname"=>"id");
+$dalTablestore_sub_categories["category_id"] = array("type"=>3,"varname"=>"category_id");
+$dalTablestore_sub_categories["name"] = array("type"=>200,"varname"=>"name");
+$dalTablestore_sub_categories["template_id"] = array("type"=>3,"varname"=>"template_id");
+$dalTablestore_sub_categories["initial_name"] = array("type"=>200,"varname"=>"initial_name");
+$dalTablestore_sub_categories["view1"] = array("type"=>3,"varname"=>"view1");
+$dalTablestore_sub_categories["view2"] = array("type"=>3,"varname"=>"view2");
+$dalTablestore_sub_categories["view3"] = array("type"=>3,"varname"=>"view3");
+$dalTablestore_sub_categories["size1"] = array("type"=>3,"varname"=>"size1");
+$dalTablestore_sub_categories["size2"] = array("type"=>3,"varname"=>"size2");
+$dalTablestore_sub_categories["size3"] = array("type"=>3,"varname"=>"size3");
+$dalTablestore_sub_categories["size4"] = array("type"=>3,"varname"=>"size4");
+$dalTablestore_sub_categories["size5"] = array("type"=>3,"varname"=>"size5");
+$dalTablestore_sub_categories["size6"] = array("type"=>201,"varname"=>"size6");
+$dalTablestore_sub_categories["sort"] = array("type"=>3,"varname"=>"sort");
+$dalTablestore_sub_categories["brawseid"] = array("type"=>200,"varname"=>"brawseid");
+$dalTablestore_sub_categories["brandnode"] = array("type"=>200,"varname"=>"brandnode");
+$dalTablestore_sub_categories["brandidwomen"] = array("type"=>200,"varname"=>"brandidwomen");
+$dalTablestore_sub_categories["condition_id"] = array("type"=>3,"varname"=>"condition_id");
+$dalTablestore_sub_categories["condition_tmp"] = array("type"=>3,"varname"=>"condition_tmp");
+$dalTablestore_sub_categories["rakuten_koumoku"] = array("type"=>201,"varname"=>"rakuten_koumoku");
+$dalTablestore_sub_categories["saisun_priority_check"] = array("type"=>3,"varname"=>"saisun_priority_check");
+$dalTablestore_sub_categories["condition_details"] = array("type"=>201,"varname"=>"condition_details");
+$dalTablestore_sub_categories["updated_at"] = array("type"=>135,"varname"=>"updated_at");
+$dalTablestore_sub_categories["updated_by"] = array("type"=>200,"varname"=>"updated_by");
+$dalTablestore_sub_categories["created_at"] = array("type"=>135,"varname"=>"created_at");
+$dalTablestore_sub_categories["created_by"] = array("type"=>200,"varname"=>"created_by");
+$dalTablestore_sub_categories["output_template"] = array("type"=>201,"varname"=>"output_template");
+$dalTablestore_sub_categories["saisun_model_id"] = array("type"=>3,"varname"=>"saisun_model_id");
+$dalTablestore_sub_categories["related_words"] = array("type"=>201,"varname"=>"related_words");
+$dalTablestore_sub_categories["hansokuhi_flag"] = array("type"=>16,"varname"=>"hansokuhi_flag");
+$dalTablestore_sub_categories["category_class"] = array("type"=>3,"varname"=>"category_class");
+$dalTablestore_sub_categories["sales_category"] = array("type"=>3,"varname"=>"sales_category");
+$dalTablestore_sub_categories["colorstone_id"] = array("type"=>3,"varname"=>"colorstone_id");
+	$dalTablestore_sub_categories["id"]["key"]=true;
+
+$dal_info["internet_at_urlounge_co_jp__store_sub_categories"] = &$dalTablestore_sub_categories;
+?>

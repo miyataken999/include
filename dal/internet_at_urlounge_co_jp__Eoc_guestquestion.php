@@ -1,0 +1,47 @@
+<?php
+$dalTableEoc_guestquestion = array();
+$dalTableEoc_guestquestion["id"] = array("type"=>3,"varname"=>"id");
+$dalTableEoc_guestquestion["site-reflect"] = array("type"=>3,"varname"=>"site_reflect");
+$dalTableEoc_guestquestion["timestamp"] = array("type"=>135,"varname"=>"timestamp");
+$dalTableEoc_guestquestion["service-name"] = array("type"=>200,"varname"=>"service_name");
+$dalTableEoc_guestquestion["service-name-text"] = array("type"=>201,"varname"=>"service_name_text");
+$dalTableEoc_guestquestion["service-story"] = array("type"=>200,"varname"=>"service_story");
+$dalTableEoc_guestquestion["service-story-text"] = array("type"=>201,"varname"=>"service_story_text");
+$dalTableEoc_guestquestion["service-satisfied"] = array("type"=>200,"varname"=>"service_satisfied");
+$dalTableEoc_guestquestion["sold-this-time"] = array("type"=>200,"varname"=>"sold_this_time");
+$dalTableEoc_guestquestion["cancel-reason"] = array("type"=>200,"varname"=>"cancel_reason");
+$dalTableEoc_guestquestion["cancel-reason-text"] = array("type"=>201,"varname"=>"cancel_reason_text");
+$dalTableEoc_guestquestion["other-reason-text"] = array("type"=>201,"varname"=>"other_reason_text");
+$dalTableEoc_guestquestion["how-much-cheap"] = array("type"=>200,"varname"=>"how_much_cheap");
+$dalTableEoc_guestquestion["how-much-cheap-text"] = array("type"=>201,"varname"=>"how_much_cheap_text");
+$dalTableEoc_guestquestion["dissatisfied-reason-text"] = array("type"=>201,"varname"=>"dissatisfied_reason_text");
+$dalTableEoc_guestquestion["service-speed"] = array("type"=>200,"varname"=>"service_speed");
+$dalTableEoc_guestquestion["service-speed-text"] = array("type"=>201,"varname"=>"service_speed_text");
+$dalTableEoc_guestquestion["service-description"] = array("type"=>200,"varname"=>"service_description");
+$dalTableEoc_guestquestion["service-description-text"] = array("type"=>201,"varname"=>"service_description_text");
+$dalTableEoc_guestquestion["site-level"] = array("type"=>200,"varname"=>"site_level");
+$dalTableEoc_guestquestion["site-level-text"] = array("type"=>201,"varname"=>"site_level_text");
+$dalTableEoc_guestquestion["choice-reason-text"] = array("type"=>201,"varname"=>"choice_reason_text");
+$dalTableEoc_guestquestion["search-keyword"] = array("type"=>201,"varname"=>"search_keyword");
+$dalTableEoc_guestquestion["search-keyword-text"] = array("type"=>201,"varname"=>"search_keyword_text");
+$dalTableEoc_guestquestion["search-engine"] = array("type"=>200,"varname"=>"search_engine");
+$dalTableEoc_guestquestion["search-engine-text"] = array("type"=>201,"varname"=>"search_engine_text");
+$dalTableEoc_guestquestion["search-medium"] = array("type"=>200,"varname"=>"search_medium");
+$dalTableEoc_guestquestion["search-medium-text"] = array("type"=>201,"varname"=>"search_medium_text");
+$dalTableEoc_guestquestion["freely-write-text"] = array("type"=>201,"varname"=>"freely_write_text");
+$dalTableEoc_guestquestion["a-word-text"] = array("type"=>201,"varname"=>"a_word_text");
+$dalTableEoc_guestquestion["customer-sex"] = array("type"=>200,"varname"=>"customer_sex");
+$dalTableEoc_guestquestion["customer-age"] = array("type"=>200,"varname"=>"customer_age");
+$dalTableEoc_guestquestion["customer-address"] = array("type"=>200,"varname"=>"customer_address");
+$dalTableEoc_guestquestion["mail-or-tel-text"] = array("type"=>201,"varname"=>"mail_or_tel_text");
+$dalTableEoc_guestquestion["domain"] = array("type"=>200,"varname"=>"domain");
+$dalTableEoc_guestquestion["device"] = array("type"=>200,"varname"=>"device");
+$dalTableEoc_guestquestion["voice_sub_id"] = array("type"=>3,"varname"=>"voice_sub_id");
+$dalTableEoc_guestquestion["updated_at"] = array("type"=>135,"varname"=>"updated_at");
+$dalTableEoc_guestquestion["ecc_id"] = array("type"=>3,"varname"=>"ecc_id");
+$dalTableEoc_guestquestion["status"] = array("type"=>200,"varname"=>"status");
+$dalTableEoc_guestquestion["comment_agree"] = array("type"=>200,"varname"=>"comment_agree");
+	$dalTableEoc_guestquestion["id"]["key"]=true;
+
+$dal_info["internet_at_urlounge_co_jp__Eoc_guestquestion"] = &$dalTableEoc_guestquestion;
+?>

@@ -1,0 +1,5 @@
+
+Runner.pages.PageSettings.addPageEvent('saisunn',Runner.pages.constants.PAGE_LIST,"afterPageReady",function(pageObj,proxy,pageid){pageObj.buttonNames[pageObj.buttonNames.length]='New_Button191';if(!pageObj.buttonEventBefore['New_Button191']){pageObj.buttonEventBefore['New_Button191']=function(params,ctrl,pageObj,proxy,pageid,rowData,row){window.open('http://urlounge.co.jp/include/csv/label/create_csv_shop5.php');}}
+if(!pageObj.buttonEventAfter['New_Button191']){pageObj.buttonEventAfter['New_Button191']=function(result,ctrl,pageObj,proxy,pageid,rowData,row){var message=result["txt"]+" !!!";ctrl.setMessage(message);}}
+$('a[id="New_Button191"]').each(function(){if($(this).closest('.gridRowAdd').length){return;}
+this.id="New_Button191"+"_"+Runner.genId();var button_New_Button191=new Runner.form.Button({id:this.id,btnName:"New_Button191"});button_New_Button191.init({args:[pageObj,proxy,pageid]});});});

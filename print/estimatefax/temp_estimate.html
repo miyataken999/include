@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<?
+if($ecc_id == ''){
+	print "顧客SEQがありません。";
+	exit();
+}
+
+
+include_once $_SERVER["DOCUMENT_ROOT"]."/include/classes/pdo_connect.php";
+
+$staff_pdo = new pdo_connect;
+$uid;
+$staff = $staff_pdo->select_one("SELECT first_name,user_id,english_name from users where user_id={$uid} limit 1");
+$staff_name_array = explode("　",$staff["first_name"]);
+$staff_name = $staff_name_array[0];
+
+
+$pdo = new pdo_connect;
+$query = "SELECT * FROM Eoc WHERE ecc_id={$ecc_id} LIMIT 1";
+$Eoc = $pdo->select_one($query);
+$week = array( "日", "月", "火", "水", "木", "金", "土" );
+
+
+
+/*
+最新の顧客情報と、
+進行中の宅配取引(新規申込、到着済み、査定中、成約あり、振込確認済)の古い方1件、
+その最新の商品データから査定人の取得
+*/
+$Eoc_takuhai_pdo = new pdo_connect;
+$query = "SELECT * FROM Eoc_takuhai WHERE ecc_id={$ecc_id} AND (`status`=1 OR `status`=4 OR `status`=12 OR `status`=5 OR `status`=6 ) LIMIT 1";
+$Eoc_takuhai = $Eoc_takuhai_pdo->select_one($query);
+$toutyakubi = $Eoc_takuhai["received_time"];
+$toutyakubi = date("Y/m/d",strtotime($toutyakubi));
+
+$shouhin_for_satei_pdo = new pdo_connect;
+$shouhin_for_satei = $shouhin_for_satei_pdo->select_one("SELECT * from shouhin where ecc_id={$ecc_id} AND Eoc_takuhai_id = {$Eoc_takuhai["id"]} order by product_id desc limit 1");
+$satei_id = $shouhin_for_satei["satei_by"];
+$satei_hi = $shouhin_for_satei["satei_hi"];
+$satei_hi = date("Y/m/d",strtotime($satei_hi));
+
+
+$satei_pdo = new pdo_connect;
+$satei_staff = $satei_pdo->select_one("SELECT * from users where user_id={$satei_id} limit 1");
+
+$kinsa_pdo = new pdo_connect;
+//NEW 金査
+// $kinsa = $kinsa_pdo->select_many("SELECT *,SUM(price) as 'sum_price' from shouhin where ecc_id={$ecc_id} AND `status`=126 AND kinsa_flag=1 order by product_id ");
+$kinsa = $kinsa_pdo->select_many("SELECT * from shouhin where ecc_id={$ecc_id} order by product_id ");
+
+
+$shouhin_pdo = new pdo_connect;
+//未売却
+$shouhin = $shouhin_pdo->select_many("SELECT *,SUM(price) as 'sum_price' from shouhin where ecc_id={$ecc_id} AND `status`=32 order by product_id ");
+
+
+$sum_price = number_format($kinsa[0]["sum_price"] + $shouhin[0]["sum_price"]);
+
+
+?>
+	<div id="est_all">
+		<div class="est_top_block">
+			<div class="row">
+				<div class="half">
+					<div class="row ttlrow">
+						<div class="head"><span>No.1</span></div>
+						<div class="body"><span>見積書/計算書</span></div>
+					</div>
+					<div class="result_block">
+						<div class="row name_row">
+							<div class="head"><?=$Eoc["name1"]?></div>
+							<div class="body">様</div>
+						</div>
+						<div class="row">
+							<div class="head">到着日</div>
+							<div class="body"><?=$toutyakubi?></div>
+						</div>
+						<div class="row">
+							<div class="head">査定日</div>
+							<div class="body"><?=$satei_hi?></div>
+						</div>
+						<div class="row">
+							<div class="head">査定担当</div>
+							<div class="body"><?=$satei_staff["first_name"]?></div>
+						</div>
+						<div class="row">
+							<div class="head">合計金額</div>
+							<div class="body"><?=$sum_price?>円</div>
+						</div>
+					</div><!-- end result_block -->
+				</div>
+				<div class="half">
+					<img class="logo" src="/include/print/xlogo.png" alt="">
+					<div class="lounge_block">
+						ラウンジデザイナーズ(株)<br>
+						東京都公安委員会第305501007069号<br>
+						〒170-0013<br>
+						東京都豊島区東池袋1-25-14<br>
+						アルファビルディング4F<br>
+						0120-980-246(服飾査定部)<br>
+						0120-954-479(宝飾査定部)<br>
+						03-5985-0388<br>
+						FAX 03-5985-0390<br>
+						URL https://kinkaimasu.jp/<br>
+						URL https://brandkaimasu.com/<br>
+						URL https://diakaimasu.jp/
+					</div>
+				</div>
+			</div>
+		</div><!-- end est_top_block -->
+
+		<table class="est_details">
+			<tr>
+				<th colspan="8" class="name_data">品名</th>
+				<th class="bikou_vertical">備考</th>
+				<th class="price_vertical">金額</th>
+			</tr>
+
+<?
+// shouhin
+// kinsa
+// for ($i=1; $i <= 45; $i++) {
+// var_dump($kinsa);
+// ini_set("display_errors",1);
+$count_num = 1;
+include $_SERVER["DOCUMENT_ROOT"]."/include/connection.php";
+$sql = mysql_query('SET NAMES utf8');
+foreach ($kinsa as $item) {
+	$res = $item;
+	$product_id = $res["product_id"];
+	include $_SERVER["DOCUMENT_ROOT"]."/include/satei/kin_satei/create_title.php";
+
+?>
+			<tr>
+				<td class="ai_num"><?=$count_num?></td>
+				<td colspan="7"><?=$title?></td>
+				<td class="bikou_vertical"><?=$res["comment"]?></td>
+				<td class="price_vertical"><?=number_format($res["price"])?></td>
+			</tr>
+<?
+$count_num++;
+}//end foreach
+
+if($count_num < 45){
+	for ($i=$count_num; $i <= 45; $i++) {
+?>
+			<tr>
+				<td class="ai_num"><?=$i?></td>
+				<td colspan="7"></td>
+				<td class="bikou_vertical"></td>
+				<td class="price_vertical"></td>
+			</tr>
+<?
+	}// end for
+}// end if
+
+
+?>
+			<tr>
+				<td colspan="8"></td>
+				<th>小計(税込)</th>
+				<th>117.438</th>
+			</tr>
+
+		</table><!-- end est_details -->
+
+		<div class="row bottom_block">
+			<div class="bikou">
+				備考：
+				<div class="bikou_text">
+					<br><br><br>
+				</div>
+			</div>
+			<div class="tantou">
+				<table>
+					<tr>
+						<th>担当者</th>
+						<th>作成者</th>
+						<th>経理係</th>
+						<th>責任者</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div><!-- enc est_all -->
+<style type="text/css">
+	table{
+		border-collapse: collapse;
+	}
+	.bottom_block{
+		position: relative;
+	}
+	.bikou{
+		width: 70%;
+		font-size: 16px;
+		margin-top: 20px;
+	}
+	.bikou_text{
+		border: 1px solid #111;
+	}
+	.tantou{
+		width: 30%;
+		font-size: 16px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.tantou table{
+		font-size: 16px;
+		margin: 20px auto 0;
+		border-top: 1px solid #111;
+		border-left: 1px solid #111;
+	}
+	.tantou table th{
+		background-color: #eee;
+		border-right: 1px solid #111;
+		border-bottom: 1px solid #111;
+	}
+	.tantou table td{
+		height: 50px;
+		border-right: 1px solid #111;
+		border-bottom: 1px solid #111;
+	}
+	body{
+		-webkit-print-color-adjust: exact;
+		background-color: #ccc;
+		font-family: "Century Gothic","Avenir", "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    	font-weight: 500;
+		background-color: #fff;
+		width: 210mm;
+    	height: 297mm;
+    	/*height: 1300px;*/
+    	/*overflow: hidden;*/
+    	margin: 0;
+    	padding: 0;
+	}
+	img{
+		max-width: 100%;
+	}
+	.row{
+		overflow: hidden;
+	}
+	.row>div{
+		float: left;
+	}
+	.row .head{
+		/*font-weight: bold;*/
+	}
+	#est_all{
+		width: 210mm;
+    	height: 297mm;
+    	margin: auto;
+		font-size: 26px;
+		padding: 0px 0px 0px;
+		background-color: #fff;
+	}
+	#est_all .logo{
+		margin: 0;
+		height: 80px;
+	}
+	.row .half{
+		width: 50%;
+	}
+	.ttlrow .head{
+		height: 80px;
+		position: relative;
+	}
+	.ttlrow .head span{
+		position: absolute;
+		bottom: 0;
+	}
+	.ttlrow .body{
+		height: 80px;
+		position: relative;
+	}
+	.ttlrow .body span{
+		font-size: 50px;
+		position: absolute;
+		bottom: 0;
+	}
+	.est_top_block .head{
+		width: 20%;
+	}
+	.est_top_block .body{
+		width: 80%;
+	}
+	.est_top_block .name_row{
+		margin-top: 30px;
+		margin-bottom: 30px;
+		font-size: 30px;
+	}
+	.est_top_block .name_row .head{
+		width: 90%;
+		text-align: center;
+		border-right: none;
+	}
+	.est_top_block .name_row .body{
+		width: 10%;
+		text-align: right;
+	}
+	.est_top_block .result_block{
+		padding-right: 50px;
+	}
+	.lounge_block{
+		border: 2px solid #c00;
+		padding: 10px;
+		text-align: left;
+		font-size: 16px;
+		line-height: 1.2;
+	}
+	.result_block{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	.result_block .row{
+		border-bottom: 1px solid #111;
+	}
+	.result_block .head{
+		width: 30%;
+		border-right: 1px solid #111;
+	}
+	.result_block .body{
+		width: 70%;
+		text-align: right;
+	}
+	.est_details{
+		width: 100%;
+		font-size: 16px;
+		line-height: 1;
+		border-top: 1px solid #111;
+		border-left: 1px solid #111;
+	}
+	.est_details th{
+		background-color: #ccc;
+		border-bottom: 1px solid #111;
+		border-right: 1px solid #111;
+	}
+	.est_details td{
+		border-bottom: 1px solid #111;
+		border-right: 1px solid #111;
+		padding: 0;
+	}
+	.est_details .ai_num{
+		text-align: center;
+	}
+	.est_details .name_data{
+		width: 70%;
+	}
+	.bikou_vertical{
+
+	}
+	.est_details td.price_vertical{
+		text-align: right;
+		padding-right: 10px;
+	}
+	.price_vertical{
+		width: 100px;
+	}
+</style>
+
+
+</body>
+</html>

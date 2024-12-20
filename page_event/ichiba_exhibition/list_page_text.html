@@ -1,0 +1,91 @@
+<div class="ex_details">
+  <h4 class="btn btn-default" id="ex_details_opener">使い方</h4>
+  <div id="ex_details_table">
+    <table>
+      <tr>
+        <th>新規テンプレート作成の注意点</th>
+        <td>
+          <a href="https://rifa.life/shop5/mst_ichiba_meeting_list.php">主催者マスタ</a>
+          での「GSS原本ID」は、生成する出品商品の詳細シート以外の、<br>
+          補助的データや表紙などを入力してください。<br><br>
+          出品商品の詳細シートは、
+          <a href="https://docs.google.com/spreadsheets/d/1QytlNfjdAX-bLMw4vrduKu5GvypcA24jsmEcQBcWtS8/edit#gid=1200155085">
+            商品データ原本
+          </a>
+          へ追加し、<br>
+          追加したシートIDを主催者マスタの「出品表シート原本ID」へ入力してください。<br><br>
+        </td>
+      </tr>
+      <tr>
+        <th>項目</th>
+        <td>
+          Item Type	:製品・ダイヤで処理を分けている。ものばんくなどは「その他」で。
+        </td>
+      </tr>
+      <tr>
+        <th>SEQ一括入力</th>
+        <td>そのまんま。一括して商品を登録。ソートも入力順で処理される。</td>
+      </tr>
+      <tr>
+        <th>メモUP:「Comment(番号)」を商品へ反映</th>
+        <td>
+          <div class="">
+            製品→コメント（comment）
+          </div>
+          <div class="">
+            ダイヤ→メモ（description）
+          </div>
+          <div class="">
+            その他（ものばんく,JWA,JBA）はコメント
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>ドライブUP</th>
+        <td>
+          <div class="">
+            初期、ドライブへGSS作成し、URL保存<br>
+            次回以降はそのURLへ上書き保存<br>
+            初期作成時はGAS(LoungeAPI)へPOST送信（この時点ではGSS原本IDからコピーするだけ）<br>
+            <a target="_blank" href="https://script.google.com/a/urlounge.co.jp/d/1BDXsZoW5TPWMoSOx84R7IyFmd6s-SlRSTelEJVig2DYWzk8UYNifeS9d/edit">GASの編集画面</a><br>
+            実際の商品データの書き込み「drive_gss_write.php」<br>
+            <br>
+            Item Typeで分けていたもの<br>
+            ▼出品商品データの取得▼<br>
+            出品表IDから取得。製品・その他：ソート順。ダイヤ：親石降順<br>
+            <br>
+            ▼出品表の商品シートの原本GSSのシートID▼<br>
+            <a href="https://docs.google.com/spreadsheets/d/1QytlNfjdAX-bLMw4vrduKu5GvypcA24jsmEcQBcWtS8/edit#gid=514486649">原本GSS</a>
+            から商品データのシートのテンプレートとして使用するシートID<br>
+            ※[その他]は<a href="https://rifa.life/shop5/mst_ichiba_meeting_list.php">主催者マスタ</a>のidごとに設定する。<br>
+            <br>
+            ▼商品データの生成▼<br>
+            金性・大カテ・中カテ以外は製品・ダイヤで分岐<br>
+            ※[その他]はシートID同様、主催者マスタのidごとに設定する。
+            <br>
+            ▼書込みの範囲▼<br>
+            書き込みGSSごとに異なる。つまり、[その他]は主催者マスタのidごと。<br>
+            <br>
+            ▼出品表上部書込み▼<br>
+            項目の有無、位置で完全にバラバラ。細かく調整<br>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<style media="screen">
+  .ex_details table{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+  .ex_details table th, .ex_details table td{
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  #ex_details_table{
+    display: none;
+  }
+</style>

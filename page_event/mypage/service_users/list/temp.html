@@ -1,0 +1,121 @@
+<table class="users_table">
+  <tr>
+    <td>
+      <div class="">
+        <div class="link_box">
+          <a
+            class="btn btn-link"
+            href="https://rifa.life/mypage_eva/idfile_check_images_list.php?masterkey1={{ id }}&mastertable=service_users"
+          >身分証一覧({{ idfile_check_images_ct }})</a>
+          <a
+            class="btn btn-link"
+            href="https://rifa.life/mypage_eva/events_list.php?masterkey1={{ id }}&mastertable=service_users"
+          >エラーログ({{ error_ct }})</a>
+          <a
+            class="btn btn-danger"
+            href=""
+          >アカウントを停止する</a>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="detail_box_area">
+        <table class='detail_box' >
+          <tr>
+            <th>ユーザーID</th>
+            <td>{{ id }}</td>
+            <th>顧客SEQ</th>
+            <td>{{ ecc_id }}</td>
+            <td colspan="2">{{ ecc_link }}</td>
+          </tr>
+          <tr>
+            <th>LINE id</th>
+            <td colspan="5">{{ line_id }}</td>
+          </tr>
+
+          <tr>
+            <th>お名前</th>
+            <td>
+              <div class="angouka">{{ user_name_kana }}</div>
+              <div class="angouka">{{ user_name }}</div>
+            </td>
+            <th>表示名</th>
+            <td colspan="">{{ display_name }}</td>
+            <th>電話番号</th>
+            <td><div class="angouka">
+              {{ user_tel }}
+            </div></td>
+          </tr>
+
+          <tr>
+            <th>住所</th>
+            <td colspan="5">
+              <div class="angouka">
+              {{ user_yuubinn }}<br>{{ address_1 }}　{{ address_2 }}　{{ address_3 }}　{{ address_4 }}
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th colspan="6" class='head head_line'>
+              Emailログイン・アカウントロック
+            </th>
+          </tr>
+
+
+          <tr>
+            <th>Email</th>
+            <td>{{ email }}</td>
+            <th>Email認証</th>
+            <td>{! email_verified !}</td>
+            <th>変更予定Email</th>
+            <td>{{ change_email }}</td>
+          </tr>
+
+          <tr>
+            <th>ロック状態</th>
+            <td>{! emaillogin_lock !}</td>
+            <th>ロック期限</th>
+            <td>{{ emaillogin_lock_time }}</td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <th colspan="6" class='head head_line'>２段階認証</th>
+          </tr>
+
+          <tr>
+            <th>設定</th>
+            <td>{! multi_factor !}</td>
+            <th>チャネル</th>
+            <td>{{ multi_factor_channel }}</td>
+            <th></th>
+            <td></td>
+          </tr>
+
+        </table>
+      </div>
+    </td>
+    <td class="vertical-align-top">
+      <div class="identification_box">
+        <div class="identification_ttl">
+          本人確認状況
+        </div>
+
+        <div class="text-left">
+          <a
+            class="btn btn-warning"
+            target="_blank"
+            href="https://rifa.life/evaProject/mypage/id_fileupload/service_user_id/{{ id }}"
+          >手動で身分証をアップロードする</a>
+        </div>
+
+        <div class="id_log_table">
+          {{ identification_html }}
+        </div>
+      </div>
+
+    </td>
+  </tr>
+</table>

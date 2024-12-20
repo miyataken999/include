@@ -1,0 +1,9 @@
+#固定IPはいってから再度設定する。20170921
+
+#order deny,allow
+#deny from all
+#allow from 118.236.172.111
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>

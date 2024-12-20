@@ -1,0 +1,4 @@
+#Satisfy any
+#order allow,deny
+#allow from all
+AddType application/force-download .csv

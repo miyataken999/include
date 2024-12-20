@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+<?
+if($ecc_id == ''){
+	print "顧客SEQがありません。";
+	exit();
+}
+
+
+include_once $_SERVER["DOCUMENT_ROOT"]."/include/classes/pdo_connect.php";
+
+$staff_pdo = new pdo_connect;
+$uid;
+$staff = $staff_pdo->select_one("SELECT first_name,user_id,english_name from users where user_id={$uid} limit 1");
+$staff_name_array = explode("　",$staff["first_name"]);
+$staff_name = $staff_name_array[0];
+
+
+$pdo = new pdo_connect;
+$query = "SELECT * FROM Eoc WHERE ecc_id={$ecc_id} LIMIT 1";
+$Eoc = $pdo->select_one($query);
+$Eoc["name1"] = str_replace("　", " ", $Eoc["name1"]);
+?>
+<div id="all">
+	<div id="top_block">
+		<div class="left_block">
+			<img src="/include/print/xlogo.png" alt="">
+			<div class="under_txt">ラウンジデザイナーズ(株)<br>東京都公安委員会第305501007069号</div>
+		</div>
+		<div class="right_block">
+			〒170-0013<br>
+			東京都豊島区東池袋1-25-14<br>
+			アルファビルディング4F<br>
+			<br>
+			<div>TEL:0120-954-679</div>
+			<div>MAIL:rifa@urlounge.co.jp</div>
+			<div>URL:https://urlounge.co.jp/</div>
+		</div>
+		<br clear="all">
+		<div class="top_left_txt"><span class="small">Date:</span><strong><?=date("Y年n月d日")?></strong>　/　<span class="small">No. of pages:</span><strong>２</strong><span class="small"> including this page</span></div>
+	</div><!-- end top_block -->
+	<div class="box_top from">From</div><div class="box_top to">To</div><br clear="all">
+	<div id="from_box">
+		<div class="left_block">
+			<span id="rifa_from">リファスタ</span><span id="rifa_from_back">リファスタ</span>
+			<img id="yazirushi" src="/include/print/yazirushi.png" alt="">
+		</div><!-- end left_block -->
+		<div class="right_block">
+			<div id="to_box">
+				<div class="name_box"><strong><?=$Eoc["name1"]?> 様<br>（<?=$Eoc["ecc_id"]?>）</strong></div>
+				<div>　</div>
+			</div><!-- end to_box -->
+		</div><!-- end right_block -->
+		<br clear="all">
+	</div><!-- end from_box -->
+	<div id="message_box">
+		<div class="title">
+			<?=$title?>
+		</div>
+		<div class="message">
+			<?=$message?>
+		</div>
+	</div><!-- end message_box -->
+	<div class="tantou">
+		担当 : <?=$staff_name?>
+	</div>
+
+	<h3>ご不明点はお気軽にお問い合わせください</h3>
+	<div id="foot_area">
+		<ul>
+			<li>
+				<div class="li_text">
+					▼LINEでのお問い合わせ▼
+				</div>
+				<img src="/include/print/QR_line.png" alt="">
+			</li>
+			<li>
+				<div class="li_text">
+					▼フォームからのお問い合わせ▼
+				</div>
+				<img src="/include/print/QR_info.png" alt="">
+			</li>
+		</ul>
+	</div>
+
+
+</div><!-- end all -->
+<style type="text/css">
+	#rifa_from_back{
+		display: none;
+	}
+	body{
+		-webkit-print-color-adjust: exact;
+		background-color: #ccc;
+		font-family: "Century Gothic","Avenir", "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    	font-weight: 500;
+	}
+	#all{
+		width: 210mm;
+    	height: 297mm;
+    	margin: auto;
+		font-size: 18px;
+		padding: 80px 50px 50px;
+		background-color: #fff;
+	}
+	.small{
+		font-size: 16px;
+	}
+	#top_block{
+		position: relative;
+	}
+	#top_left_bottom_area{
+		padding-top: 20px;
+	}
+	.left_block{
+		float: left;
+		width: 50%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.right_block{
+		float: left;
+		width: 50%;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	#top_block .left_block{
+	}
+	#top_block .right_block{
+		font-size: 14px;
+	    line-height: 16px;
+	    padding-left: 70px;
+	    letter-spacing: 3px;
+	    padding-top: 10px;
+	}
+	.top_left_txt{
+		border-bottom: 1px dashed #777;
+	    display: inline-block;
+	    padding-top: 45px;
+	}
+	.top_left_txt strong{
+		display: inline-block;
+		padding-left: 5px;
+	}
+	img{
+		max-width: 100%;
+	}
+	#from_box{
+	    position: relative;
+	    border-left: 1px solid #555;
+	    border-right: 1px solid #555;
+	    border-bottom: 1px solid #555;
+	    border-top: 1px dashed #555;
+	    /* padding: 0px 10px 0px; */
+	    display: flex;
+	    align-items: center;
+		/*background-color: #fff0de;*/
+	}
+	#from_box .left_block {
+		width: 30%;
+		text-align: center;
+	}
+	#from_box .right_block {
+		width: 70%;
+		text-align: center;
+	}
+	#yazirushi{
+		position: absolute;
+	    bottom: 30%;
+	    width: 90px;
+	    left: 23%;
+		/* transform: translateY(50%); */
+	}
+	#from_box .left_block span{
+		/*position: absolute;
+		left: 25%;
+		top: 55%;
+		-webkit-transform: translate(-50%,-50%);
+		   -moz-transform: translate(-50%,-50%);
+		    -ms-transform: translate(-50%,-50%);
+		     -o-transform: translate(-50%,-50%);
+		        transform: translate(-50%,-50%);*/
+	}
+	#from_box .left_block{
+		padding-left: 10px;
+		box-sizing: border-box;
+	}
+	#from_box .right_block{
+		line-height: 20px;
+	    border-left: 1px solid #111;
+	    padding: 35px 0 15px 20px;
+    	box-sizing: border-box;
+	}
+	#from_box .right_block .left_block{
+		width: 50px;
+		padding: 0;
+		text-align: center;
+	}
+	#from_box .right_block .right_block{
+		border: none;
+	}
+	#to_box{
+		/*border-top : 1px dashed #555;
+		border-left: 1px solid #555;
+	    border-right: 1px solid #555;
+	    border-bottom: 1px solid #555;*/
+	    /*padding-left: 10px;
+	    padding-top: 15px;
+	    padding-bottom: 10px;*/
+		/*background-color: #fff0de;*/
+	}
+	#to_box .name_box{
+		font-size: 24px;
+	}
+	#to_box .name_box strong{
+		background-color: #ff0;
+		padding: 5px 10px;
+	    font-size: 24px;
+	}
+
+	#message_box {
+	    margin-top: 35px;
+	    border: 1px solid #111;
+	    height: 95mm;
+	}
+	#message_box .title {
+	    /*font-size: 26px;*/
+	    line-height: 1;
+	    padding: 20px 5px 15px;
+	    border-bottom: 1px dashed #555;
+	    font-weight: bold;
+	    text-align: center;
+	    background-color: #ccc;
+	}
+	#message_box .message {
+	    padding: 15px;
+	    font-size: 15px;
+	    line-height: 24px;
+	}
+	.tantou{
+		text-align: right;
+    	padding: 10px 10px 0px 0;
+	}
+
+	.under_txt {
+		font-size: 14px;
+	    text-align: center;
+	    line-height: 18px;
+	}
+	.box_top {
+		float: left;
+		box-sizing: border-box;
+		padding:15px;
+		background-color: #f1f1f1;
+		font-weight: bold;
+		text-align: center;
+		border-left: 1px solid #555;
+	    border-right: 1px solid #555;
+	    border-top: 1px solid #555;
+		margin-top: 25px;
+		color: #fff;
+	}
+	.box_top.from {
+		width: 30%;
+		background-color: #555;
+	}
+	.box_top.to {
+		width: 70%;
+		background-color: #e40012;
+	}
+	#foot_area {
+		width: 65%;
+		margin: 0 auto;
+	}
+	h3 {
+		text-align: center;
+		border-top: 1px dashed #888;
+		border-bottom: 1px dashed #888;
+		padding: 10px;
+		color: #555;
+		font-size: 18px;
+		width: 60%;
+		margin: 25px auto 0;
+	}
+	#foot_area ul {
+		width: 100%;
+		margin-block-start: 0em;
+	    margin-block-end: 0em;
+	    margin-inline-start: 0px;
+	    margin-inline-end: 0px;
+	    padding-inline-start: 0px;
+	}
+	#foot_area ul li {
+		width: 50%;
+	    float: left;
+	    list-style: none;
+	    text-align: center;
+	    padding-top: 15px;
+	    font-size: 15px;
+	}
+	#foot_area ul li img{
+		width: 50%;
+		display: block;
+		margin: 0 auto;
+	}
+
+</style>
+<style type="text/css">
+body{
+	background-color: #fff;
+}
+#all{
+	padding: 60px 0 0;
+}
+#message_box{
+	margin-top: 40px;
+}
+#message_box .title{
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	margin-left: 1px;
+}
+#rifa_from {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+         -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+#rifa_from_back{
+	color: #fff;
+	display: block;
+}
+#from_box .right_block {
+    line-height: 20px;
+    border-left: 1px solid #111;
+    padding: 35px 0 15px 40px;
+}
+
+
+	#all{
+		width: 210mm;
+    	height: 297mm;
+    	margin: auto;
+		font-size: 20px;
+		padding: 80px 50px 50px;
+		background-color: #fff;
+	}
+	.small{
+		font-size: 18px;
+	}
+	#top_block .right_block{
+		font-size: 16px;
+	    line-height: 16px;
+	    padding-left: 70px;
+	    letter-spacing: 3px;
+	    padding-top: 10px;
+	}
+	#to_box .name_box{
+		font-size: 26px;
+	}
+	#to_box .name_box strong{
+		background-color: #ff0;
+		padding: 5px 10px;
+	    font-size: 26px;
+		display: block;
+		line-height: 1.2;
+		text-align: left;
+		word-break: keep-all;
+	}
+
+	#message_box .message {
+	    padding: 15px;
+	    font-size: 17px;
+	    line-height: 24px;
+	}
+	.under_txt {
+		font-size: 16px;
+	    text-align: center;
+	    line-height: 18px;
+	}
+
+	h3 {
+		text-align: center;
+		border-top: 1px dashed #888;
+		border-bottom: 1px dashed #888;
+		padding: 10px;
+		color: #555;
+		font-size: 20px;
+		width: 60%;
+		margin: 25px auto 0;
+	}
+	#foot_area ul li {
+		width: 50%;
+	    float: left;
+	    list-style: none;
+	    text-align: center;
+	    padding-top: 15px;
+	    font-size: 17px;
+	}
+
+</style>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?php
+$dalTablemst_sell_campaign = array();
+$dalTablemst_sell_campaign["inSession"] = array("type"=>3,"varname"=>"inSession");
+$dalTablemst_sell_campaign["folderName"] = array("type"=>200,"varname"=>"folderName");
+$dalTablemst_sell_campaign["id"] = array("type"=>3,"varname"=>"id");
+$dalTablemst_sell_campaign["mall_name"] = array("type"=>200,"varname"=>"mall_name");
+$dalTablemst_sell_campaign["campaign_name"] = array("type"=>201,"varname"=>"campaign_name");
+$dalTablemst_sell_campaign["camp_startDate"] = array("type"=>135,"varname"=>"camp_startDate");
+$dalTablemst_sell_campaign["camp_lastDate"] = array("type"=>135,"varname"=>"camp_lastDate");
+$dalTablemst_sell_campaign["h1_sub"] = array("type"=>201,"varname"=>"h1_sub");
+$dalTablemst_sell_campaign["top_txt"] = array("type"=>201,"varname"=>"top_txt");
+$dalTablemst_sell_campaign["coupon_name"] = array("type"=>200,"varname"=>"coupon_name");
+$dalTablemst_sell_campaign["coupon_id"] = array("type"=>200,"varname"=>"coupon_id");
+$dalTablemst_sell_campaign["content1_ttl"] = array("type"=>201,"varname"=>"content1_ttl");
+$dalTablemst_sell_campaign["content1_sub"] = array("type"=>201,"varname"=>"content1_sub");
+$dalTablemst_sell_campaign["content1"] = array("type"=>201,"varname"=>"content1");
+$dalTablemst_sell_campaign["content1_row"] = array("type"=>3,"varname"=>"content1_row");
+$dalTablemst_sell_campaign["content1_column"] = array("type"=>3,"varname"=>"content1_column");
+$dalTablemst_sell_campaign["content2_ttl"] = array("type"=>201,"varname"=>"content2_ttl");
+$dalTablemst_sell_campaign["content2_sub"] = array("type"=>201,"varname"=>"content2_sub");
+$dalTablemst_sell_campaign["content2"] = array("type"=>201,"varname"=>"content2");
+$dalTablemst_sell_campaign["content2_row"] = array("type"=>3,"varname"=>"content2_row");
+$dalTablemst_sell_campaign["content2_column"] = array("type"=>3,"varname"=>"content2_column");
+$dalTablemst_sell_campaign["content3_ttl"] = array("type"=>201,"varname"=>"content3_ttl");
+$dalTablemst_sell_campaign["content3_sub"] = array("type"=>201,"varname"=>"content3_sub");
+$dalTablemst_sell_campaign["content3"] = array("type"=>201,"varname"=>"content3");
+$dalTablemst_sell_campaign["content3_row"] = array("type"=>3,"varname"=>"content3_row");
+$dalTablemst_sell_campaign["content3_column"] = array("type"=>3,"varname"=>"content3_column");
+$dalTablemst_sell_campaign["search_box1_on"] = array("type"=>200,"varname"=>"search_box1_on");
+$dalTablemst_sell_campaign["search_box1_title"] = array("type"=>201,"varname"=>"search_box1_title");
+$dalTablemst_sell_campaign["search_box1_word"] = array("type"=>201,"varname"=>"search_box1_word");
+$dalTablemst_sell_campaign["search_box1_row"] = array("type"=>3,"varname"=>"search_box1_row");
+$dalTablemst_sell_campaign["search_box1_column"] = array("type"=>3,"varname"=>"search_box1_column");
+$dalTablemst_sell_campaign["search_box2_on"] = array("type"=>200,"varname"=>"search_box2_on");
+$dalTablemst_sell_campaign["search_box2_title"] = array("type"=>201,"varname"=>"search_box2_title");
+$dalTablemst_sell_campaign["search_box2_word"] = array("type"=>201,"varname"=>"search_box2_word");
+$dalTablemst_sell_campaign["search_box2_row"] = array("type"=>3,"varname"=>"search_box2_row");
+$dalTablemst_sell_campaign["search_box2_column"] = array("type"=>3,"varname"=>"search_box2_column");
+	$dalTablemst_sell_campaign["id"]["key"]=true;
+
+$dal_info["internet_at_urlounge_co_jp__mst_sell_campaign"] = &$dalTablemst_sell_campaign;
+?>

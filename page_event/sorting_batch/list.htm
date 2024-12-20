@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}>
+  <HEAD>
+    <META http-equiv="X-UA-Compatible" content="IE=Edge">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>
+      {$pagetitle}
+    </TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <LINK href="styles/default.css" rel="stylesheet" type="text/css">
+    {BEGIN rtlCSS}
+      <LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <LINK href="{$stylepath}" rel="stylesheet" type="text/css">
+    {END styleCSSFiles}
+    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+  </HEAD>
+  <BODY class="body-sidebar {$stylename} function-list" {$bodyattrs}>
+    {BEGIN body}
+      <STYLE>
+        {$containerCss}
+      </STYLE>
+      <DIV class="bs-fixedheader" id="fixedheader{$id}">
+        {$header}
+        {BEGIN container_menu}
+          <NAV class="navbar navbar-default" data-container="menu" data-pageid="{$pageid}" {$menu_chiddenattr}>
+            {BEGIN container_hdr}
+              <DIV class="navbar-header" data-container="hdr" data-pageid="{$pageid}" {$hdr_chiddenattr}>
+                {BEGIN logo_block}
+                  <A class="navbar-brand" href="{$home_link}" data-brick="logo" data-pageid="{$pageid}" {$logo_hiddenattr}>
+                    {$logo}
+                  </A>
+                {END logo_block}
+                {BEGIN collapse_block}
+                  <BUTTON class="navbar-toggle collapsed" type="button" data-brick="bsnavbarcollapse" data-pageid="{$pageid}" data-target=".bs-navcontrolled" data-runner-toggle="collapse" {$bsnavbarcollapse_hiddenattr}>
+                    <SPAN class="sr-only">
+                      Toggle navigation
+                    </SPAN>
+                    <SPAN class="icon-bar">
+                    </SPAN>
+                  </BUTTON>
+                {END collapse_block}
+              </DIV>
+            {END container_hdr}
+            {BEGIN container_menu_1}
+              <DIV class="bs-navform navbar-collapse bs-hidden-xs bs-navcontrolled" aria-expanded="false" data-container="menu_1" data-pageid="{$pageid}" {$menu_1_chiddenattr}>
+                {BEGIN menu_block}
+                  {$menu main horizontal}
+                {END menu_block}
+                {BEGIN container_more}
+                  <DIV class="navbar-right navbar-form" data-container="more" data-pageid="{$pageid}" {$more_chiddenattr}>
+                    {BEGIN more_list}
+                      <DIV class="btn-group bs-navsection" data-brick="morebutton" data-pageid="{$pageid}" {$morebutton_hiddenattr}>
+                        <BUTTON class="btn btn-default dropdown-toggle" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown">
+                          <SPAN class="glyphicon glyphicon-cog">
+                          </SPAN>
+                          <SPAN class="caret">
+                          </SPAN>
+                        </BUTTON>
+                        <UL class="dropdown-menu">
+                          {BEGIN editselected_link}
+                            <LI class="massButton{$id} disabled">
+                              <A href="#" {$editselectedlink_attrs} {$editselectedlink_span}>
+                                選択範囲を編集
+                              </A>
+                            </LI>
+                          {END editselected_link}
+                          {BEGIN exportselected_link}
+                            <LI class="massButton{$id} disabled">
+                              <A href="#" {$exportselectedlink_attrs} {$exportselectedlink_span}>
+                                選択対象のエクスポート
+                              </A>
+                            </LI>
+                          {END exportselected_link}
+                          <LI class="divider" role="separator">
+                          </LI>
+                          {BEGIN asearch_link}
+                            <LI>
+                              <A href="sorting_batch_search.php" {$advsearchlink_attrs}>
+                                詳細検索
+                              </A>
+                            </LI>
+                          {END asearch_link}
+                          {BEGIN searchPanelTopButtons}
+                            <LI>
+                              <A id="showOptPanel{$id}" href="#">
+                                Show search panel
+                              </A>
+                            </LI>
+                          {END searchPanelTopButtons}
+                          <LI class="divider" role="separator">
+                          </LI>
+                          {BEGIN export_link}
+                            <LI>
+                              <A href="sorting_batch_export.php" target="_blank" {$exportlink_attrs}>
+                                結果のエクスポート
+                              </A>
+                            </LI>
+                          {END export_link}
+                          {BEGIN import_link}
+                            <LI>
+                              <A href="sorting_batch_import.php?{$crosstable_attrs}" {$importlink_attrs}>
+                                インポート
+                              </A>
+                            </LI>
+                          {END import_link}
+                        </UL>
+                      </DIV>
+                    {END more_list}
+                    {BEGIN security_block}
+                      <SPAN class="bs-navsection" id="login_block{$id}" data-brick="loggedas" data-pageid="{$pageid}" {$loggedas_hiddenattr}>
+                        {BEGIN guestloginbutton}
+                          <BUTTON class="btn btn-info" type="button" {$guestloginlink_attrs}>
+                            ログイン
+                          </BUTTON>
+                        {END guestloginbutton}
+                        {BEGIN loggedas_message}
+                          <SPAN class="dropdown">
+                            <BUTTON class="btn btn-info dropdown-toggle" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown">
+                              <SPAN class="glyphicon glyphicon-user">
+                              </SPAN>
+                              {$username}
+                            </BUTTON>
+                            <UL class="dropdown-menu">
+                              {BEGIN logoutbutton}
+                                <LI>
+                                  <A href="#" {$logoutlink_attrs}>
+                                    ログアウト
+                                  </A>
+                                </LI>
+                              {END logoutbutton}
+                              {BEGIN adminarea_link}
+                                <LI>
+                                  <A href="admin_rights_list.php" {$adminarealink_attrs}>
+                                    管理エリア
+                                  </A>
+                                </LI>
+                              {END adminarea_link}
+                            </UL>
+                          </SPAN>
+                        {END loggedas_message}
+                      </SPAN>
+                    {END security_block}
+                  </DIV>
+                {END container_more}
+                {BEGIN container_more_1}
+                  <DIV class="navbar-right navbar-form" data-container="more_1" data-pageid="{$pageid}" {$more_1_chiddenattr}>
+                    {BEGIN searchform_block}
+                      <SPAN class="form-group" data-brick="search" data-pageid="{$pageid}" {$search_hiddenattr}>
+                        <DIV class="input-group">
+                          {BEGIN searchform_text}
+                            <INPUT class="form-control" type="search" size="25" {$searchfor_attrs}>
+                          {END searchform_text}
+                          <SPAN class="input-group-btn">
+                            {BEGIN searchform_showall}
+                              <BUTTON title="全て表示" class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+                                <SPAN class="glyphicon glyphicon-remove">
+                                </SPAN>
+                              </BUTTON>
+                            {END searchform_showall}
+                            {BEGIN searchform_search}
+                              <BUTTON class="btn btn-primary" {$searchbutton_attrs}>
+                                <SPAN class="glyphicon glyphicon-search">
+                                </SPAN>
+                              </BUTTON>
+                            {END searchform_search}
+                          </SPAN>
+                        </DIV>
+                      </SPAN>
+                    {END searchform_block}
+                  </DIV>
+                {END container_more_1}
+              </DIV>
+            {END container_menu_1}
+          </NAV>
+        {END container_menu}
+      </DIV>
+      <DIV class="container-fluid" id="underheader{$id}">
+        <DIV class="row">
+          <DIV class="sidebar bs-fixed" id="sidebar{$id}" {$blockattr_left}>
+            {BEGIN container_left}
+              <DIV class=" " data-container="left" data-pageid="{$pageid}" {$left_chiddenattr}>
+                {BEGIN searchPanel}
+                  <DIV class="searchOptions panel panel-primary searchPanelContainer" data-brick="searchpanel" data-pageid="{$pageid}" {$searchpanel_hiddenattr} {$srchOpt_attrs}>
+                    <!-- Search panel content -->
+                    <DIV class="panel-heading">
+                      <DIV class="btn-group" id="addSearchFieldButton{$id}">
+                        <BUTTON class="btn btn-default dropdown-toggle" id="showHideControlChooseMenu{$id}" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown">
+                          Search in
+                          <SPAN class="caret">
+                          </SPAN>
+                        </BUTTON>
+                      </DIV>
+                      <A class="rnr-button btn btn-default" id="__38" href="#" typeid="ib">
+                        検索
+                      </A>
+                      <A class="rnr-button btn btn-default" id="___58" href="#" typeid="ib">
+                        全表示
+                      </A>
+                      <DIV class="btn-group searchpanel-options" id="searchPanelOptions{$id}">
+                        <BUTTON class="btn btn-default dropdown-toggle" aria-expanded="false" aria-haspopup="true" type="button" data-toggle="dropdown">
+                          <SPAN class="glyphicon glyphicon glyphicon-option-vertical">
+                          </SPAN>
+                        </BUTTON>
+                        <UL class="dropdown-menu dropdown-left">
+                          <LI id="showHideSearchType{$id}" {$showHideCtrlsOpt_attrs}>
+                            <A>
+                              オプションの表示
+                            </A>
+                          </LI>
+                          <LI class="divider" role="separator">
+                          </LI>
+                          <LI class="srchCritTop" style="display: none;">
+                            <A>
+                              <INPUT name="srchType{$id}" id="radioAll" type="radio" {$all_checkbox}>
+                              <LABEL for="radioAll">
+                                <SPAN class="glyphicon">
+                                  &nbsp;
+                                </SPAN>
+                                all conditions
+                              </LABEL>
+                            </A>
+                          </LI>
+                          <LI class="srchCritTop" style="display: none;">
+                            <A>
+                              <INPUT name="srchType{$id}" id="radioAny" type="radio" {$any_checkbox}>
+                              <LABEL for="radioAny">
+                                <SPAN class="glyphicon">
+                                  &nbsp;
+                                </SPAN>
+                                any condition
+                              </LABEL>
+                            </A>
+                          </LI>
+                          <LI class="divider" role="separator">
+                          </LI>
+                          <LI>
+                            <A class="close-button">
+                              <SPAN class="glyphicon glyphicon-remove">
+                                &nbsp;
+                              </SPAN>
+                              隠す：
+                            </A>
+                          </LI>
+                        </UL>
+                      </DIV>
+                    </DIV>
+                    <DIV class="panel-body controlsBlock" {$bottomSearchButt_attrs}>
+                      {BEGIN searchCtrlBlock}
+                        <DIV class="srchPanelRow form-group" {$filterRow_attrs}>
+                          <LABEL>
+                            {$fLabel}
+                          </LABEL>
+                          {$delCtrlButt}
+                          <SPAN class="rnr-searchtype">
+                            {$searchtype}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol1}
+                          </SPAN>
+                        </DIV>
+                      {END searchCtrlBlock}
+                      {BEGIN searchCtrlBlock_description}
+                        <DIV class="form-group srchPanelRow {$filterRow_class_description}" {$filterRow_attrs_description}>
+                          <LABEL>
+                            {$label sorting_batch description}
+                          </LABEL>
+                          {$delCtrlButt}
+                          <SPAN class="rnr-searchtype">
+                            {$searchtype_description}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol_description}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol1_description}
+                          </SPAN>
+                        </DIV>
+                      {END searchCtrlBlock_description}
+                      {BEGIN searchCtrlBlock_ichiba_exhibition_id}
+                        <DIV class="form-group srchPanelRow {$filterRow_class_ichiba_exhibition_id}" {$filterRow_attrs_ichiba_exhibition_id}>
+                          <LABEL>
+                            {$label sorting_batch ichiba_exhibition_id}
+                          </LABEL>
+                          {$delCtrlButt}
+                          <SPAN class="rnr-searchtype">
+                            {$searchtype_ichiba_exhibition_id}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol_ichiba_exhibition_id}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol1_ichiba_exhibition_id}
+                          </SPAN>
+                        </DIV>
+                      {END searchCtrlBlock_ichiba_exhibition_id}
+                      {BEGIN searchCtrlBlock_status}
+                        <DIV class="form-group srchPanelRow {$filterRow_class_status}" {$filterRow_attrs_status}>
+                          <LABEL>
+                            {$label sorting_batch status}
+                          </LABEL>
+                          {$delCtrlButt}
+                          <SPAN class="rnr-searchtype">
+                            {$searchtype_status}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol_status}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol1_status}
+                          </SPAN>
+                        </DIV>
+                      {END searchCtrlBlock_status}
+                      {BEGIN searchCtrlBlock_product_id}
+                        <DIV class="form-group srchPanelRow {$filterRow_class_product_id}" {$filterRow_attrs_product_id}>
+                          <LABEL>
+                            {$label sorting_batch product_id}
+                          </LABEL>
+                          {$delCtrlButt}
+                          <SPAN class="rnr-searchtype">
+                            {$searchtype_product_id}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol_product_id}
+                          </SPAN>
+                          <SPAN class="rnr-searchcontrol">
+                            {$searchcontrol1_product_id}
+                          </SPAN>
+                        </DIV>
+                      {END searchCtrlBlock_product_id}
+                    </DIV>
+                    <DIV class="panel-footer bottomSearchButt" {$bottomSearchButt_attrs}>
+                      <BUTTON class="btn btn-primary" id="searchButton{$id}" {$searchbutton_attrs}>
+                        検索
+                      </BUTTON>
+                      <BUTTON class="btn btn-default" {$showAllCont_attrs} {$showallbutton_attrs}>
+                        全て表示
+                      </BUTTON>
+                    </DIV>
+                  </DIV>
+                {END searchPanel}
+              </DIV>
+            {END container_left}
+          </DIV>
+          <DIV class="bs-sidebar-main" data-offsetblock="true">
+            <DIV class="bs-sidebar-screenbound">
+              {BEGIN container_breadcrumbs}
+                <DIV class=" " data-container="breadcrumbs" data-pageid="{$pageid}" {$breadcrumbs_chiddenattr}>
+                  {BEGIN container_bc}
+                    <DIV class=" " data-container="bc" data-pageid="{$pageid}" {$bc_chiddenattr}>
+                      {BEGIN breadcrumbs}
+                        <OL class="breadcrumb">
+                          <LI>
+                            <A href="{$home_link}">
+                              <SPAN class="glyphicon glyphicon-home">
+                              </SPAN>
+                            </A>
+                            {$crumb_dropdown}
+                          </LI>
+                          {BEGIN crumb}
+                            <LI class="{$crumb_item_class}">
+                              {BEGIN crumb_title_link}
+                                <A {$crumb_attrs}>
+                                  {$crumb_title}
+                                </A>
+                              {END crumb_title_link}
+                              {BEGIN crumb_title_span}
+                                <SPAN {$crumb_attrs}>
+                                  {$crumb_title}
+                                </SPAN>
+                              {END crumb_title_span}
+                              {$crumb_dropdown}
+                            </LI>
+                          {END crumb}
+                        </OL>
+                      {END breadcrumbs}
+                    </DIV>
+                  {END container_bc}
+                </DIV>
+              {END container_breadcrumbs}
+              {BEGIN container_masterinfo}
+                <DIV class=" " data-container="masterinfo" data-pageid="{$pageid}" {$masterinfo_chiddenattr}>
+                  {BEGIN mastertable_block}
+                    <DIV class="panel panel-info table-panel">
+                      <DIV class="panel-heading">
+                        {$master_heading}
+                      </DIV>
+                      <DIV class="panel-body">
+                        {$showmasterfile}
+                      </DIV>
+                    </DIV>
+                  {END mastertable_block}
+                </DIV>
+              {END container_masterinfo}
+            </DIV>
+            <DIV>
+            </DIV>
+            <DIV class="bs-sidebar-screenbound bs-minwidth">
+              {BEGIN container_messagerow}
+                <DIV class="row rnr-rowcontainer bs-screenwidth" data-container="messagerow" data-pageid="{$pageid}" {$messagerow_chiddenattr}>
+                  {BEGIN container_message}
+                    <DIV class="col-md-12" data-container="message" data-pageid="{$pageid}" {$message_chiddenattr}>
+                      {BEGIN message_block}
+                        <DIV class="alert {$message_class}" role="alert" data-brick="message" data-pageid="{$pageid}" {$message_hiddenattr}>
+                          {$message}
+                        </DIV>
+                      {END message_block}
+                    </DIV>
+                  {END container_message}
+                </DIV>
+              {END container_messagerow}
+              {BEGIN container_gridcontrols}
+                <DIV class="row rnr-rowcontainer bs-navcontrolled bs-hidden-xs bs-screenwidth" data-container="gridcontrols" data-pageid="{$pageid}" {$gridcontrols_chiddenattr}>
+                  {BEGIN container_add_delete}
+                    <DIV class="bottom-margin col-md-6" style="width: 61.03%; height: 76px;" data-container="add_delete" data-pageid="{$pageid}" {$add_delete_chiddenattr}>
+                      {BEGIN record_controls_block}
+                        <SPAN data-brick="recordcontrol" data-pageid="{$pageid}" {$recordcontrol_hiddenattr}>
+                          {BEGIN saveall_link}
+                            <BUTTON class="btn btn-primary" type="button" {$savealllink_attrs} {$savealllink_span}>
+                              全て保存
+                            </BUTTON>
+                          {END saveall_link}
+                          {BEGIN cancelall_link}
+                            <BUTTON class="btn btn-default" type="button" {$cancelalllink_attrs} {$cancelalllink_span}>
+                              キャンセル
+                            </BUTTON>
+                          {END cancelall_link}
+                          <A class="rnr-button btn btn-default" id="___________516" href="#" typeid="ib">
+                            魔法【サジェスト復活】
+                          </A>
+                          <A class="rnr-button btn btn-default" id="_____224" href="#" typeid="ib">
+                            ラベル出力
+                          </A>
+                          <A class="rnr-button btn btn-default" id="__________53" href="#" typeid="ib">
+                            選択範囲をラベル登録
+                          </A>
+                          <A class="rnr-button btn btn-default" id="New_Button53" href="#" typeid="ib">
+                            ST不変ラベル登録
+                          </A>
+                          &nbsp;
+                        </SPAN>
+                      {END record_controls_block}
+                    </DIV>
+                  {END container_add_delete}
+                  {BEGIN container_gridinfo}
+                    <DIV class="bottom-margin text-right col-md-6" style="width: 37.73%; height: 38px;" data-container="gridinfo" data-pageid="{$pageid}" {$gridinfo_chiddenattr}>
+                      {BEGIN details_found}
+                        <SPAN class="form-inline form-inline-always" data-brick="details_found" data-pageid="{$pageid}" {$details_found_hiddenattr}>
+                          {$records_indicator}
+                          <SPAN>
+                            {BEGIN recordspp_block}
+                              {$recsPerPage}
+                            {END recordspp_block}
+                          </SPAN>
+                        </SPAN>
+                      {END details_found}
+                    </DIV>
+                  {END container_gridinfo}
+                  {BEGIN container_column}
+                    <DIV class="rnr-c rnr-ch rnr-c-column">
+                      <DIV class="style1 rnr-bl rnr-b-wrapper {$brickclass_wrapper}">
+                        {BEGIN container_}
+                          <DIV class="rnr-c rnr-ch rnr-c-">
+                          </DIV>
+                        {END container_}
+                      </DIV>
+                      <DIV class="rnr-hfiller">
+                      </DIV>
+                    </DIV>
+                  {END container_column}
+                  {BEGIN container_gridinfo_sort}
+                    <DIV class="bottom-margin text-right col-md-12" data-container="gridinfo_sort" data-pageid="{$pageid}" {$gridinfo_sort_chiddenattr}>
+                      {BEGIN reorder_records}
+                        <DIV class="form-inline sortby-ctrl" data-brick="reorder_records" data-pageid="{$pageid}" {$reorder_records_hiddenattr}>
+                          Sort by&nbsp;{$sortByDropdown}
+                        </DIV>
+                      {END reorder_records}
+                    </DIV>
+                  {END container_gridinfo_sort}
+                </DIV>
+              {END container_gridcontrols}
+              {BEGIN container_center}
+                <DIV class=" " data-container="center" data-pageid="{$pageid}" {$center_chiddenattr}>
+                  {BEGIN container_grid}
+                    <DIV class="bs-grid" data-container="grid" data-pageid="{$pageid}" {$grid_chiddenattr}>
+                      {BEGIN grid_block}
+                        <STYLE>
+                          .bs-gridcell[data-field=status]:before {
+                          content: "{$label sorting_batch status}";
+                          }
+                          .bs-gridcell[data-field=product_id]:before {
+                          content: "{$label sorting_batch product_id}";
+                          }
+                          .bs-gridcell[data-field=text_all]:before {
+                          content: "{$label sorting_batch text_all}";
+                          }
+                          .bs-gridcell[data-field=sorting_reflect_flag]:before {
+                          content: "{$label sorting_batch sorting_reflect_flag}";
+                          }
+                          .bs-gridcell[data-field=parent_stone]:before {
+                          content: "{$label sorting_batch parent_stone}";
+                          }
+                          .bs-gridcell[data-field=parent_stone_ref]:before {
+                          content: "{$label sorting_batch parent_stone_ref}";
+                          }
+                          .bs-gridcell[data-field=DA_INTENSITY]:before {
+                          content: "{$label sorting_batch DA_INTENSITY}";
+                          }
+                          .bs-gridcell[data-field=DA_OVERTONE]:before {
+                          content: "{$label sorting_batch DA_OVERTONE}";
+                          }
+                          .bs-gridcell[data-field=color]:before {
+                          content: "{$label sorting_batch color}";
+                          }
+                          .bs-gridcell[data-field=color_ref]:before {
+                          content: "{$label sorting_batch color_ref}";
+                          }
+                          .bs-gridcell[data-field=clarity]:before {
+                          content: "{$label sorting_batch clarity}";
+                          }
+                          .bs-gridcell[data-field=clarity_ref]:before {
+                          content: "{$label sorting_batch clarity_ref}";
+                          }
+                          .bs-gridcell[data-field=DA_CUT]:before {
+                          content: "{$label sorting_batch DA_CUT}";
+                          }
+                          .bs-gridcell[data-field=DA_CUT_ref]:before {
+                          content: "{$label sorting_batch DA_CUT_ref}";
+                          }
+                          .bs-gridcell[data-field=size1]:before {
+                          content: "{$label sorting_batch size1}";
+                          }
+                          .bs-gridcell[data-field=size1_ref]:before {
+                          content: "{$label sorting_batch size1_ref}";
+                          }
+                          .bs-gridcell[data-field=size2]:before {
+                          content: "{$label sorting_batch size2}";
+                          }
+                          .bs-gridcell[data-field=size2_ref]:before {
+                          content: "{$label sorting_batch size2_ref}";
+                          }
+                          .bs-gridcell[data-field=size3]:before {
+                          content: "{$label sorting_batch size3}";
+                          }
+                          .bs-gridcell[data-field=size3_ref]:before {
+                          content: "{$label sorting_batch size3_ref}";
+                          }
+                          .bs-gridcell[data-field=fluo]:before {
+                          content: "{$label sorting_batch fluo}";
+                          }
+                          .bs-gridcell[data-field=cofl]:before {
+                          content: "{$label sorting_batch cofl}";
+                          }
+                          .bs-gridcell[data-field=fluo_cofl_ref]:before {
+                          content: "{$label sorting_batch fluo_cofl_ref}";
+                          }
+                          .bs-gridcell[data-field=appraiser]:before {
+                          content: "{$label sorting_batch appraiser}";
+                          }
+                          .bs-gridcell[data-field=appraiser_ref]:before {
+                          content: "{$label sorting_batch appraiser_ref}";
+                          }
+                          .bs-gridcell[data-field=pol_sym]:before {
+                          content: "{$label sorting_batch pol_sym}";
+                          }
+                          .bs-gridcell[data-field=pol_sym_ref]:before {
+                          content: "{$label sorting_batch pol_sym_ref}";
+                          }
+                          .bs-gridcell[data-field=pol_sym2]:before {
+                          content: "{$label sorting_batch pol_sym2}";
+                          }
+                          .bs-gridcell[data-field=pol_sym2_ref]:before {
+                          content: "{$label sorting_batch pol_sym2_ref}";
+                          }
+                          .bs-gridcell[data-field=serial_number]:before {
+                          content: "{$label sorting_batch serial_number}";
+                          }
+                          .bs-gridcell[data-field=description]:before {
+                          content: "{$label sorting_batch description}";
+                          }
+                          td[data-field="parent_stone_ref"], th[data-field="parent_stone_ref"] ,
+                          td[data-field="serial_number_ref"], th[data-field="serial_number_ref"] ,
+                          td[data-field="clarity_ref"], th[data-field="clarity_ref"] ,
+                          td[data-field="DA_CUT_ref"], th[data-field="DA_CUT_ref"] ,
+                          td[data-field="size1_ref"], th[data-field="size1_ref"] ,
+                          td[data-field="size2_ref"], th[data-field="size2_ref"] ,
+                          td[data-field="size3_ref"], th[data-field="size3_ref"] ,
+                          td[data-field="appraiser_ref"], th[data-field="appraiser_ref"] ,
+                          td[data-field="pol_sym_ref"], th[data-field="pol_sym_ref"] ,
+                          td[data-field="pol_sym2_ref"], th[data-field="pol_sym2_ref"]
+                          {
+                              display: none;
+                          }
+                        </STYLE>
+                        <TABLE class="table {$grid_classes} bs-flexgrid rnr-b-grid rnr-gridtable" style="width: 100%;" cellpadding="0" data-brick="grid" data-pageid="{$pageid}" {$grid_hiddenattr}>
+                          <THEAD>
+                            {BEGIN grid_header}
+                              <TR class="rnr-toprow {$gridHeader_class}">
+                                {BEGIN record_header}
+                                  {BEGIN listIcons_column}
+                                    <TH style="width: 85px;" ieditcont="all">
+                                      &nbsp;
+                                    </TH>
+                                  {END listIcons_column}
+                                  {BEGIN checkbox_column}
+                                    <TH style="width: 30px;">
+                                      <INPUT type="checkbox" {$checkboxheader_attrs}>
+                                    </TH>
+                                  {END checkbox_column}
+                                  {BEGIN sorting_reflect_flag_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$sorting_reflect_flag_class}" data-field="sorting_reflect_flag">
+                                      {BEGIN sorting_reflect_flag_fieldheader}
+                                        <SPAN {$sorting_reflect_flag_orderlinkattrs}>
+                                          {$label sorting_batch sorting_reflect_flag}
+                                        </SPAN>
+                                      {END sorting_reflect_flag_fieldheader}
+                                    </TH>
+                                  {END sorting_reflect_flag_fieldheadercolumn}
+                                  {BEGIN product_id_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$product_id_class}" style="" data-field="product_id">
+                                      {BEGIN product_id_fieldheader}
+                                        <SPAN {$product_id_orderlinkattrs}>
+                                          {$label sorting_batch product_id}
+                                        </SPAN>
+                                      {END product_id_fieldheader}
+                                    </TH>
+                                  {END product_id_fieldheadercolumn}
+                                  {BEGIN status_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$status_class}" style="" data-field="status">
+                                      {BEGIN status_fieldheader}
+                                        <SPAN {$status_orderlinkattrs}>
+                                          {$label sorting_batch status}
+                                        </SPAN>
+                                      {END status_fieldheader}
+                                    </TH>
+                                  {END status_fieldheadercolumn}
+                                  {BEGIN ichiba_exhibition_id_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$ichiba_exhibition_id_class}" data-field="ichiba_exhibition_id">
+                                      {BEGIN ichiba_exhibition_id_fieldheader}
+                                        <SPAN {$ichiba_exhibition_id_orderlinkattrs}>
+                                          {$label sorting_batch ichiba_exhibition_id}
+                                        </SPAN>
+                                      {END ichiba_exhibition_id_fieldheader}
+                                    </TH>
+                                  {END ichiba_exhibition_id_fieldheadercolumn}
+                                  {BEGIN description_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$description_class}" data-field="description">
+                                      {BEGIN description_fieldheader}
+                                        <SPAN {$description_orderlinkattrs}>
+                                          {$label sorting_batch description}
+                                        </SPAN>
+                                      {END description_fieldheader}
+                                    </TH>
+                                  {END description_fieldheadercolumn}
+                                  {BEGIN serial_number_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$serial_number_class}" data-field="serial_number">
+                                      {BEGIN serial_number_fieldheader}
+                                        <SPAN {$serial_number_orderlinkattrs}>
+                                          {$label sorting_batch serial_number}
+                                        </SPAN>
+                                      {END serial_number_fieldheader}
+                                    </TH>
+                                  {END serial_number_fieldheadercolumn}
+                                  {BEGIN serial_number_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$serial_number_ref_class}" data-field="serial_number_ref">
+                                      {BEGIN serial_number_ref_fieldheader}
+                                        <SPAN {$serial_number_ref_orderlinkattrs}>
+                                          {$label sorting_batch serial_number_ref}
+                                        </SPAN>
+                                      {END serial_number_ref_fieldheader}
+                                    </TH>
+                                  {END serial_number_ref_fieldheadercolumn}
+
+                                  {BEGIN parent_stone_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$parent_stone_class}" data-field="parent_stone">
+                                      {BEGIN parent_stone_fieldheader}
+                                        <SPAN {$parent_stone_orderlinkattrs}>
+                                          {$label sorting_batch parent_stone}
+                                        </SPAN>
+                                      {END parent_stone_fieldheader}
+                                    </TH>
+                                  {END parent_stone_fieldheadercolumn}
+                                  {BEGIN parent_stone_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$parent_stone_ref_class}" data-field="parent_stone_ref">
+                                      {BEGIN parent_stone_ref_fieldheader}
+                                        <SPAN {$parent_stone_ref_orderlinkattrs}>
+                                          {$label sorting_batch parent_stone_ref}
+                                        </SPAN>
+                                      {END parent_stone_ref_fieldheader}
+                                    </TH>
+                                  {END parent_stone_ref_fieldheadercolumn}
+                                  {BEGIN DA_INTENSITY_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$DA_INTENSITY_class}" data-field="DA_INTENSITY">
+                                      {BEGIN DA_INTENSITY_fieldheader}
+                                        <SPAN {$DA_INTENSITY_orderlinkattrs}>
+                                          {$label sorting_batch DA_INTENSITY}
+                                        </SPAN>
+                                      {END DA_INTENSITY_fieldheader}
+                                    </TH>
+                                  {END DA_INTENSITY_fieldheadercolumn}
+                                  {BEGIN DA_OVERTONE_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$DA_OVERTONE_class}" data-field="DA_OVERTONE">
+                                      {BEGIN DA_OVERTONE_fieldheader}
+                                        <SPAN {$DA_OVERTONE_orderlinkattrs}>
+                                          {$label sorting_batch DA_OVERTONE}
+                                        </SPAN>
+                                      {END DA_OVERTONE_fieldheader}
+                                    </TH>
+                                  {END DA_OVERTONE_fieldheadercolumn}
+                                  {BEGIN color_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$color_class}" data-field="color">
+                                      {BEGIN color_fieldheader}
+                                        <SPAN {$color_orderlinkattrs}>
+                                          {$label sorting_batch color}
+                                        </SPAN>
+                                      {END color_fieldheader}
+                                    </TH>
+                                  {END color_fieldheadercolumn}
+                                  {BEGIN color_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$color_ref_class}" data-field="color_ref">
+                                      {BEGIN color_ref_fieldheader}
+                                        <SPAN {$color_ref_orderlinkattrs}>
+                                          {$label sorting_batch color_ref}
+                                        </SPAN>
+                                      {END color_ref_fieldheader}
+                                    </TH>
+                                  {END color_ref_fieldheadercolumn}
+                                  {BEGIN clarity_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$clarity_class}" data-field="clarity">
+                                      {BEGIN clarity_fieldheader}
+                                        <SPAN {$clarity_orderlinkattrs}>
+                                          {$label sorting_batch clarity}
+                                        </SPAN>
+                                      {END clarity_fieldheader}
+                                    </TH>
+                                  {END clarity_fieldheadercolumn}
+                                  {BEGIN clarity_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$clarity_ref_class}" data-field="clarity_ref">
+                                      {BEGIN clarity_ref_fieldheader}
+                                        <SPAN {$clarity_ref_orderlinkattrs}>
+                                          {$label sorting_batch clarity_ref}
+                                        </SPAN>
+                                      {END clarity_ref_fieldheader}
+                                    </TH>
+                                  {END clarity_ref_fieldheadercolumn}
+                                  {BEGIN DA_CUT_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$DA_CUT_class}" data-field="DA_CUT">
+                                      {BEGIN DA_CUT_fieldheader}
+                                        <SPAN {$DA_CUT_orderlinkattrs}>
+                                          {$label sorting_batch DA_CUT}
+                                        </SPAN>
+                                      {END DA_CUT_fieldheader}
+                                    </TH>
+                                  {END DA_CUT_fieldheadercolumn}
+                                  {BEGIN DA_CUT_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$DA_CUT_ref_class}" data-field="DA_CUT_ref">
+                                      {BEGIN DA_CUT_ref_fieldheader}
+                                        <SPAN {$DA_CUT_ref_orderlinkattrs}>
+                                          {$label sorting_batch DA_CUT_ref}
+                                        </SPAN>
+                                      {END DA_CUT_ref_fieldheader}
+                                    </TH>
+                                  {END DA_CUT_ref_fieldheadercolumn}
+                                  {BEGIN pol_sym_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$pol_sym_class}" data-field="pol_sym">
+                                      {BEGIN pol_sym_fieldheader}
+                                        <SPAN {$pol_sym_orderlinkattrs}>
+                                          {$label sorting_batch pol_sym}
+                                        </SPAN>
+                                      {END pol_sym_fieldheader}
+                                    </TH>
+                                  {END pol_sym_fieldheadercolumn}
+                                  {BEGIN pol_sym_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$pol_sym_ref_class}" data-field="pol_sym_ref">
+                                      {BEGIN pol_sym_ref_fieldheader}
+                                        <SPAN {$pol_sym_ref_orderlinkattrs}>
+                                          {$label sorting_batch pol_sym_ref}
+                                        </SPAN>
+                                      {END pol_sym_ref_fieldheader}
+                                    </TH>
+                                  {END pol_sym_ref_fieldheadercolumn}
+                                  {BEGIN pol_sym2_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$pol_sym2_class}" data-field="pol_sym2">
+                                      {BEGIN pol_sym2_fieldheader}
+                                        <SPAN {$pol_sym2_orderlinkattrs}>
+                                          {$label sorting_batch pol_sym2}
+                                        </SPAN>
+                                      {END pol_sym2_fieldheader}
+                                    </TH>
+                                  {END pol_sym2_fieldheadercolumn}
+                                  {BEGIN pol_sym2_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$pol_sym2_ref_class}" data-field="pol_sym2_ref">
+                                      {BEGIN pol_sym2_ref_fieldheader}
+                                        <SPAN {$pol_sym2_ref_orderlinkattrs}>
+                                          {$label sorting_batch pol_sym2_ref}
+                                        </SPAN>
+                                      {END pol_sym2_ref_fieldheader}
+                                    </TH>
+                                  {END pol_sym2_ref_fieldheadercolumn}
+                                  {BEGIN fluo_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$fluo_class}" data-field="fluo">
+                                      {BEGIN fluo_fieldheader}
+                                        <SPAN {$fluo_orderlinkattrs}>
+                                          {$label sorting_batch fluo}
+                                        </SPAN>
+                                      {END fluo_fieldheader}
+                                    </TH>
+                                  {END fluo_fieldheadercolumn}
+                                  {BEGIN cofl_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$cofl_class}" data-field="cofl">
+                                      {BEGIN cofl_fieldheader}
+                                        <SPAN {$cofl_orderlinkattrs}>
+                                          {$label sorting_batch cofl}
+                                        </SPAN>
+                                      {END cofl_fieldheader}
+                                    </TH>
+                                  {END cofl_fieldheadercolumn}
+                                  {BEGIN fluo_cofl_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$fluo_cofl_ref_class}" data-field="fluo_cofl_ref">
+                                      {BEGIN fluo_cofl_ref_fieldheader}
+                                        <SPAN {$fluo_cofl_ref_orderlinkattrs}>
+                                          {$label sorting_batch fluo_cofl_ref}
+                                        </SPAN>
+                                      {END fluo_cofl_ref_fieldheader}
+                                    </TH>
+                                  {END fluo_cofl_ref_fieldheadercolumn}
+                                  {BEGIN size1_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size1_class}" data-field="size1">
+                                      {BEGIN size1_fieldheader}
+                                        <SPAN {$size1_orderlinkattrs}>
+                                          {$label sorting_batch size1}
+                                        </SPAN>
+                                      {END size1_fieldheader}
+                                    </TH>
+                                  {END size1_fieldheadercolumn}
+                                  {BEGIN size1_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size1_ref_class}" data-field="size1_ref">
+                                      {BEGIN size1_ref_fieldheader}
+                                        <SPAN {$size1_ref_orderlinkattrs}>
+                                          {$label sorting_batch size1_ref}
+                                        </SPAN>
+                                      {END size1_ref_fieldheader}
+                                    </TH>
+                                  {END size1_ref_fieldheadercolumn}
+                                  {BEGIN size2_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size2_class}" data-field="size2">
+                                      {BEGIN size2_fieldheader}
+                                        <SPAN {$size2_orderlinkattrs}>
+                                          {$label sorting_batch size2}
+                                        </SPAN>
+                                      {END size2_fieldheader}
+                                    </TH>
+                                  {END size2_fieldheadercolumn}
+                                  {BEGIN size2_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size2_ref_class}" data-field="size2_ref">
+                                      {BEGIN size2_ref_fieldheader}
+                                        <SPAN {$size2_ref_orderlinkattrs}>
+                                          {$label sorting_batch size2_ref}
+                                        </SPAN>
+                                      {END size2_ref_fieldheader}
+                                    </TH>
+                                  {END size2_ref_fieldheadercolumn}
+                                  {BEGIN size3_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size3_class}" data-field="size3">
+                                      {BEGIN size3_fieldheader}
+                                        <SPAN {$size3_orderlinkattrs}>
+                                          {$label sorting_batch size3}
+                                        </SPAN>
+                                      {END size3_fieldheader}
+                                    </TH>
+                                  {END size3_fieldheadercolumn}
+                                  {BEGIN size3_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$size3_ref_class}" data-field="size3_ref">
+                                      {BEGIN size3_ref_fieldheader}
+                                        <SPAN {$size3_ref_orderlinkattrs}>
+                                          {$label sorting_batch size3_ref}
+                                        </SPAN>
+                                      {END size3_ref_fieldheader}
+                                    </TH>
+                                  {END size3_ref_fieldheadercolumn}
+                                  {BEGIN appraiser_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$appraiser_class}" data-field="appraiser">
+                                      {BEGIN appraiser_fieldheader}
+                                        <SPAN {$appraiser_orderlinkattrs}>
+                                          {$label sorting_batch appraiser}
+                                        </SPAN>
+                                      {END appraiser_fieldheader}
+                                    </TH>
+                                  {END appraiser_fieldheadercolumn}
+                                  {BEGIN appraiser_ref_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$appraiser_ref_class}" data-field="appraiser_ref">
+                                      {BEGIN appraiser_ref_fieldheader}
+                                        <SPAN {$appraiser_ref_orderlinkattrs}>
+                                          {$label sorting_batch appraiser_ref}
+                                        </SPAN>
+                                      {END appraiser_ref_fieldheader}
+                                    </TH>
+                                  {END appraiser_ref_fieldheadercolumn}
+                                  {BEGIN text_all_fieldheadercolumn}
+                                    <TH class="rnr-gridfieldlabel {$text_all_class}" data-field="text_all">
+                                      {BEGIN text_all_fieldheader}
+                                        <SPAN {$text_all_orderlinkattrs}>
+                                          {$label sorting_batch text_all}
+                                        </SPAN>
+                                      {END text_all_fieldheader}
+                                    </TH>
+                                  {END text_all_fieldheadercolumn}
+                                  {BEGIN endrecordheader_block}
+                                    <TH class="rnr-cs" style="width: 21px;">
+                                      &nbsp;
+                                    </TH>
+                                  {END endrecordheader_block}
+                                {END record_header}
+                              </TR>
+                            {END grid_header}
+                          </THEAD>
+                          <TBODY>
+                            {BEGIN grid_row}
+                              <TR class="{$rowclass} bs-gridrow" {$rowattrs} {$rowstyle}>
+                                {BEGIN grid_record}
+                                  {BEGIN listIcons_column}
+                                    <TD class="bs-gridicons" style="width: 85px;" ieditcont="all" {$rowstyle} {$recordattrs}>
+                                      {BEGIN inlineedit_column}
+                                        {BEGIN inlineedit_link}
+                                          <A title="編集" class="glyphicon glyphicon-edit" {$inlineeditlink_attrs}>
+                                          </A>
+                                        {END inlineedit_link}
+                                      {END inlineedit_column}
+                                    </TD>
+                                  {END listIcons_column}
+                                  {BEGIN checkbox_column}
+                                    <TD class="bs-gridcheckbox" style="width: 30px;" ieditcont="checkBox" {$rowstyle} {$recordattrs}>
+                                      {BEGIN checkbox}
+                                        <INPUT type="checkbox" {$checkbox_attrs}>
+                                      {END checkbox}
+                                    </TD>
+                                  {END checkbox_column}
+                                  {BEGIN sorting_reflect_flag_fieldcolumn}
+                                    <TD class="bs-gridcell {$sorting_reflect_flag_class}" data-field="sorting_reflect_flag" {$rowstyle} {$recordattrs}>
+                                      {$sorting_reflect_flag_value}
+                                    </TD>
+                                  {END sorting_reflect_flag_fieldcolumn}
+                                  {BEGIN product_id_fieldcolumn}
+                                    <TD class="bs-gridcell {$product_id_class}" style="" data-field="product_id" {$rowstyle} {$recordattrs}>
+                                      {$product_id_value}
+                                    </TD>
+                                  {END product_id_fieldcolumn}
+                                  {BEGIN status_fieldcolumn}
+                                    <TD class="bs-gridcell {$status_class}" style="" data-field="status" {$rowstyle} {$recordattrs}>
+                                      {$status_value}
+                                    </TD>
+                                  {END status_fieldcolumn}
+                                  {BEGIN ichiba_exhibition_id_fieldcolumn}
+                                    <TD class="bs-gridcell {$ichiba_exhibition_id_class}" data-field="ichiba_exhibition_id" {$rowstyle} {$recordattrs}>
+                                      {$ichiba_exhibition_id_value}
+                                    </TD>
+                                  {END ichiba_exhibition_id_fieldcolumn}
+                                  {BEGIN description_fieldcolumn}
+                                    <TD class="bs-gridcell {$description_class}" data-field="description" {$rowstyle} {$recordattrs}>
+                                      {$description_value}
+                                    </TD>
+                                  {END description_fieldcolumn}
+                                  {BEGIN serial_number_fieldcolumn}
+                                    <TD class="bs-gridcell {$serial_number_class}" data-field="serial_number" {$rowstyle} {$recordattrs}>
+                                      {$serial_number_value}
+                                      {$serial_number_ref_value}
+                                    </TD>
+                                  {END serial_number_fieldcolumn}
+                                  {BEGIN serial_number_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$serial_number_ref_class}" data-field="serial_number_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END serial_number_ref_fieldcolumn}
+
+                                  {BEGIN parent_stone_fieldcolumn}
+                                    <TD class="bs-gridcell {$parent_stone_class}" data-field="parent_stone" {$rowstyle} {$recordattrs}>
+                                      {$parent_stone_value}
+                                      {$parent_stone_ref_value}
+                                    </TD>
+                                  {END parent_stone_fieldcolumn}
+                                  {BEGIN parent_stone_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$parent_stone_ref_class}" data-field="parent_stone_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END parent_stone_ref_fieldcolumn}
+                                  {BEGIN DA_INTENSITY_fieldcolumn}
+                                    <TD class="bs-gridcell {$DA_INTENSITY_class}" data-field="DA_INTENSITY" {$rowstyle} {$recordattrs}>
+                                      {$DA_INTENSITY_value}
+                                    </TD>
+                                  {END DA_INTENSITY_fieldcolumn}
+                                  {BEGIN DA_OVERTONE_fieldcolumn}
+                                    <TD class="bs-gridcell {$DA_OVERTONE_class}" data-field="DA_OVERTONE" {$rowstyle} {$recordattrs}>
+                                      {$DA_OVERTONE_value}
+                                    </TD>
+                                  {END DA_OVERTONE_fieldcolumn}
+                                  {BEGIN color_fieldcolumn}
+                                    <TD class="bs-gridcell {$color_class}" data-field="color" {$rowstyle} {$recordattrs}>
+                                      {$color_value}
+                                    </TD>
+                                  {END color_fieldcolumn}
+                                  {BEGIN color_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$color_ref_class}" data-field="color_ref" {$rowstyle} {$recordattrs}>
+                                      {$color_ref_value}
+                                    </TD>
+                                  {END color_ref_fieldcolumn}
+                                  {BEGIN clarity_fieldcolumn}
+                                    <TD class="bs-gridcell {$clarity_class}" data-field="clarity" {$rowstyle} {$recordattrs}>
+                                      {$clarity_value}
+                                      {$clarity_ref_value}
+                                    </TD>
+                                  {END clarity_fieldcolumn}
+                                  {BEGIN clarity_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$clarity_ref_class}" data-field="clarity_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END clarity_ref_fieldcolumn}
+                                  {BEGIN DA_CUT_fieldcolumn}
+                                    <TD class="bs-gridcell {$DA_CUT_class}" data-field="DA_CUT" {$rowstyle} {$recordattrs}>
+                                      {$DA_CUT_value}
+                                      {$DA_CUT_ref_value}
+                                    </TD>
+                                  {END DA_CUT_fieldcolumn}
+                                  {BEGIN DA_CUT_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$DA_CUT_ref_class}" data-field="DA_CUT_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END DA_CUT_ref_fieldcolumn}
+                                  {BEGIN pol_sym_fieldcolumn}
+                                    <TD class="bs-gridcell {$pol_sym_class}" data-field="pol_sym" {$rowstyle} {$recordattrs}>
+                                      {$pol_sym_value}
+                                      {$pol_sym_ref_value}
+                                    </TD>
+                                  {END pol_sym_fieldcolumn}
+                                  {BEGIN pol_sym_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$pol_sym_ref_class}" data-field="pol_sym_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END pol_sym_ref_fieldcolumn}
+                                  {BEGIN pol_sym2_fieldcolumn}
+                                    <TD class="bs-gridcell {$pol_sym2_class}" data-field="pol_sym2" {$rowstyle} {$recordattrs}>
+                                      {$pol_sym2_value}
+                                      {$pol_sym2_ref_value}
+                                    </TD>
+                                  {END pol_sym2_fieldcolumn}
+                                  {BEGIN pol_sym2_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$pol_sym2_ref_class}" data-field="pol_sym2_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END pol_sym2_ref_fieldcolumn}
+                                  {BEGIN fluo_fieldcolumn}
+                                    <TD class="bs-gridcell {$fluo_class}" data-field="fluo" {$rowstyle} {$recordattrs}>
+                                      {$fluo_value}
+                                    </TD>
+                                  {END fluo_fieldcolumn}
+                                  {BEGIN cofl_fieldcolumn}
+                                    <TD class="bs-gridcell {$cofl_class}" data-field="cofl" {$rowstyle} {$recordattrs}>
+                                      {$cofl_value}
+                                    </TD>
+                                  {END cofl_fieldcolumn}
+                                  {BEGIN fluo_cofl_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$fluo_cofl_ref_class}" data-field="fluo_cofl_ref" {$rowstyle} {$recordattrs}>
+                                      {$fluo_cofl_ref_value}
+                                    </TD>
+                                  {END fluo_cofl_ref_fieldcolumn}
+                                  {BEGIN size1_fieldcolumn}
+                                    <TD class="bs-gridcell {$size1_class}" data-field="size1" {$rowstyle} {$recordattrs}>
+                                      {$size1_value}
+                                      {$size1_ref_value}
+                                    </TD>
+                                  {END size1_fieldcolumn}
+                                  {BEGIN size1_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$size1_ref_class}" data-field="size1_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END size1_ref_fieldcolumn}
+                                  {BEGIN size2_fieldcolumn}
+                                    <TD class="bs-gridcell {$size2_class}" data-field="size2" {$rowstyle} {$recordattrs}>
+                                      {$size2_value}
+                                      {$size2_ref_value}
+                                    </TD>
+                                  {END size2_fieldcolumn}
+                                  {BEGIN size2_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$size2_ref_class}" data-field="size2_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END size2_ref_fieldcolumn}
+                                  {BEGIN size3_fieldcolumn}
+                                    <TD class="bs-gridcell {$size3_class}" data-field="size3" {$rowstyle} {$recordattrs}>
+                                      {$size3_value}
+                                      {$size3_ref_value}
+                                    </TD>
+                                  {END size3_fieldcolumn}
+                                  {BEGIN size3_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$size3_ref_class}" data-field="size3_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END size3_ref_fieldcolumn}
+                                  {BEGIN appraiser_fieldcolumn}
+                                    <TD class="bs-gridcell {$appraiser_class}" data-field="appraiser" {$rowstyle} {$recordattrs}>
+                                      {$appraiser_value}
+                                      {$appraiser_ref_value}
+                                    </TD>
+                                  {END appraiser_fieldcolumn}
+                                  {BEGIN appraiser_ref_fieldcolumn}
+                                    <TD class="bs-gridcell {$appraiser_ref_class}" data-field="appraiser_ref" {$rowstyle} {$recordattrs}>
+                                    </TD>
+                                  {END appraiser_ref_fieldcolumn}
+                                  {BEGIN text_all_fieldcolumn}
+                                    <TD class="bs-gridcell {$text_all_class}" data-field="text_all" {$rowstyle} {$recordattrs}>
+                                      {$text_all_value}
+                                    </TD>
+                                  {END text_all_fieldcolumn}
+                                  {BEGIN endrecord_block}
+                                    <TD class="rnr-cs" style="width: 21px;" {$endrecordblock_attrs}>
+                                      &nbsp;
+                                    </TD>
+                                  {END endrecord_block}
+                                {END grid_record}
+                              </TR>
+                            {END grid_row}
+                          </TBODY>
+                          <TFOOT>
+                          </TFOOT>
+                        </TABLE>
+                      {END grid_block}
+                    </DIV>
+                  {END container_grid}
+                </DIV>
+              {END container_center}
+              {BEGIN container_pagination}
+                <DIV class="text-center col-md-12" data-container="pagination" data-pageid="{$pageid}" {$pagination_chiddenattr}>
+                  {BEGIN pagination_block}
+                    <DIV data-brick="pagination" data-pageid="{$pageid}" {$pagination_hiddenattr}>
+                      {$pagination}
+                    </DIV>
+                  {END pagination_block}
+                </DIV>
+              {END container_pagination}
+            </DIV>
+          </DIV>
+        </DIV>
+      </DIV>
+      {$footer}
+    {END body}
+  </BODY>
+</HTML>

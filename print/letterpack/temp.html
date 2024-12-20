@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>フォーマット</title>
+<link media="all" rel="stylesheet" href="./css/style.css" type="text/css" />
+</head>
+<body>
+
+<style type="text/css">
+	/*td{
+		border: 1px solid #333;
+	}*/
+	table{
+		width:700px;
+		border-spacing:0;
+	}
+	.ttl{
+		font-size: 15px;
+		padding: 0 10px 10px 10px;
+	}
+	.data{
+		border-bottom:2px dotted #555;
+		font-size:25px;
+		text-align:center;
+	}
+	.right_colum{
+		border-right:solid 2px #555
+	}
+	.adress_num{
+		font-size: 30px;
+		float:right;
+	}
+	.right_colum{
+		width:90%;
+		padding:10px;
+	}
+	.left_colum1{
+		width:10%;
+		background:#4b9bcc;
+		color:#fff;
+		font-size:15px;
+		text-align:center;
+		border-left:solid 2px #555;
+
+	}
+	.left_colum2{
+		width:10%;
+		background:#afd5f5;
+		color:#555;
+		font-size:15px;
+		text-align:center;
+		border-left:solid 2px #555;
+	}
+	.to_ttl span{
+		font-size:45px;
+	}
+	.from_ttl span{
+		font-size:45px;
+	}
+	.bordernone{
+		border:none;
+	}
+	.borderbm{
+		border-bottom:solid 2px #555;
+	}
+
+	.end_colum{
+		border-left:solid 2px #555;
+		border-right:solid 2px #555;
+	}
+	.adress_num table{
+		width:initial;
+	}
+	.adress_num table td{
+		font-size: 65px;
+	    line-height: 65px;
+		border:2px solid #f00;
+
+	}
+
+</style>
+
+
+<!--
+HTML
+a, b, blockquote, br, dd, del, div, dl, dt, em, font, h1, h2, h3, h4, h5, h6, hr, i, img, li, ol, p, pre, small, span, strong, sub, sup, table, tcpdf, td, th, thead, tr, tt, u, ul
+CSS
+font-family, font-size, font-weight, font-style, color, background-color, text-decoration, width, height, text-align
+ -->
+
+
+<table >
+	<tr>
+		<td colspan="2" class =" borderbm" >
+			<div class = "adress_num">
+				<table>
+					<tr>
+					{{ postcode }}
+					</tr>
+				</table>
+			</div>
+		</td>
+	</tr>
+
+	<tr>
+		<td rowspan="3" class="left_colum1 borderbm">
+			<div class = "to_ttl">
+				お届け先<br>
+				<span>To</span>
+			</div>
+		</td>
+		<td class = "right_colum">
+			<div class="ttl">おところ : Address</div>
+			<div class="data">{{ address }}
+</div>
+		</td>
+	</tr>
+	<tr>
+		<td class = "right_colum">
+			<div class="ttl">お名前 : Name</div>
+			<div class="data">{{ name }}</div>
+		</td>
+	</tr>
+	<tr>
+		<td class = "right_colum borderbm">
+			<div class="ttl">電話番号 : Telephone Number</div>
+			<div class="data bordernone ">{{ tel }}</div>
+		</td>
+	</tr>
+
+
+	<tr>
+		<td rowspan="3"  class="left_colum2 borderbm">
+			<div class = "from_ttl">
+				依頼主<br>
+				<span>From</span>
+            </div>
+		</td>
+		<td class = "right_colum">
+			<div class="ttl">おところ : Adress</div>
+			<div class="data">東京都</div>
+		</td>
+	</tr>
+	<tr>
+		<td class = "right_colum">
+			<div class="ttl">お名前 : Name</div>
+			<div class="data">tarou</div>
+		</td>
+	</tr>
+	<tr>
+		<td class = "right_colum borderbm">
+			<div class="ttl">電話番号 : Telephone Number</div>
+			<div class="data bordernone">080000</div>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan="2" class ="end_colum borderbm">
+			<div class="ttl">品名：Contents Description</div>
+			<div class="data bordernone">見積書在中</div>
+		</td>
+	</tr>
+
+
+
+
+
+
+
+
+
+
+</table>
+</body>
+</html>
+

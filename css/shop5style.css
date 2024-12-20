@@ -1,0 +1,95 @@
+body .modal .modal-dialog {
+    margin-top: 150px;
+}
+span[id*="mail"] {
+    overflow-wrap: break-word;
+    max-width: 50px;
+}
+span[id*="mail_text"] {
+    max-width: 150px;
+    min-width: 150px;
+}
+span[id*='HTTP_REFERER'], span[id*='USER_AGENT'], span[id*='REMOTE_HOST'] {
+    width: 100px;
+    overflow-wrap: break-word;
+}
+body .table>thead:first-child>tr:first-child>th span {
+    writing-mode: vertical-lr;
+    text-decoration: none;
+}
+body .table>thead:first-child>tr:first-child>th{
+	text-align: center;
+	font-weight: normal;
+	background-color: #45ade9;
+	color: #fff;
+	line-height: 18px;
+}
+table,th,td{
+	border-color: #888!important;
+}
+th {
+    padding: 3px!important;
+}
+td {
+    padding: 3px!important;
+}
+td span {
+    font-size: 13px;
+    line-height: 15px!important;
+    display: block;
+    /* padding: 0px; */
+}
+body .form-control {
+    padding: 3px;
+    height: 25px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+label.col-md-3.control-label {
+    padding-top: 0;
+}
+.container {
+    max-width: 1000px;
+}
+.col-md-3.col-md-offset-3 {
+    width: 185px;
+    margin: auto;
+}
+.form-horizontal .control-label{
+    padding: 0;
+}
+.form-group {
+    margin-bottom: 3px;
+}
+div[data-brick="addfields"]>.container:first-child{
+    border-top: 1px solid #dcdcdc;
+    padding-top: 10px;
+}
+div[data-brick="addfields"]>.container:last-child{
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 10px;
+}
+div[data-brick="addfields"]>.container {
+    border-right: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+}
+div[data-brick="editfields"]>.container {
+    border-right: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
+}
+.col-md-12 {
+    /*float: none;*/
+}
+div#sidebar1 {
+    overflow-y: scroll;
+}
+div#sidebar1 label{
+    margin-bottom: 0;
+}
+.sidebar .form-group{
+    margin-bottom: 0;
+}
+.sidebar .form-control{
+    padding: 0;
+}

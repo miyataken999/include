@@ -1,0 +1,150 @@
+.yui3-tabview-panel{
+	width: 1200px;
+	overflow: hidden;
+}
+#New_tab11{
+	float: left;
+	width: 500px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	background-color: #fff;
+}
+#New_tab1{
+	float: left;
+	width: 900px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+    display: block;
+    background-color: #fff;
+
+}
+.ExtravaganzaBlue_white{
+	background-color: #fff;
+}
+.yui3-tabview-panel{
+	background-color: #fff;
+}
+.runner-cc{
+	background-image: none;
+}
+.yui3-tab-label{
+	display: none;
+}
+#value_size_table_1{
+	/*display: none;*/
+}
+.fieldlabel_size_table{
+	display: none;
+}
+input , select , textarea{
+	min-width: 250px;
+}
+
+ div, span{
+  font-size: 15px;
+ }
+.fieldlabel_raku_hyouji_mid , .fieldlabel_raku_hyouji_small , .fieldlabel_raku_hyouji_mini , .fieldlabel_raku_hyouji_mini1{
+ display: none;
+}
+.runner-cc {
+    border: 1px solid #888;
+}
+.runner-cc1 {
+    background-color: #ffffcc!important;
+}
+.aa {
+    padding: 5px 0;
+    margin: 3px 0;
+}
+.runner-row .runner-cc.runner-brickcontents {
+    text-align: right;
+}
+
+.runner-cl {
+    background-color: #bbb!important;
+    background: none!important;
+}
+.runner-c.runner-c-fields {
+    background-color: #fff;
+}
+div#tabGroup_New_tab11 {
+    background: #fff;
+}
+.runner-cc {
+    background-image: none!important;
+}
+.runner-cc {
+    background-image: none!important;
+    border: none!important;
+}
+.runner-cc .runner-cc .runner-cc .runner-cc{
+    border: 1px solid #bbb!important;
+}
+.yui3-tabview-list{
+	display: none;
+}
+.runner-brickcontents {
+    border: none;
+}
+.runner-bottomrow td {
+    background: none!important;
+}
+#tag_sel_area select.active_tag , #tag_sel_area input{
+	display: block!important;
+}
+.tag_select_box{
+	display: none!important;
+}
+.tag_title {
+    padding: 2px;
+    cursor: pointer;
+    color: #333;
+    background-color: #ccc;
+}
+.tag_title:hover{
+	opacity: 0.5;
+}
+#result_pass {
+    width: 400px;
+    white-space: pre-wrap;
+    border: 1px solid;
+    padding: 3px;
+}
+#id_res_btn{
+    display: none;
+}
+.runner-button:focus {
+    border-left: 10px solid #000;
+    border-right: 10px solid #000;
+    padding: 2px 10px 2px!important;
+    background-color: #eff0f1;
+}
+.runner-btnframe{
+    height: 40px!important;
+}
+textarea{
+    max-width: 450px;
+}
+.yui3-tabview-panel {
+    width: 1400px;
+}
+#result td {
+    white-space: initial;
+}
+.error_box{
+    border: 5px solid #f00;
+}
+#raku_err_moji {
+    color: #f00;
+    font-size: 14px;
+}
+#raku_err_moji.ok_raku_para {
+    color: #00dd00;
+    font-weight: bold;
+}
+#edit1_raku_title_0{
+    display: block;
+}

@@ -1,0 +1,129 @@
+body .rnr-cv {
+    overflow-y: visible;
+}
+body .rnr-field{
+    float: none;
+    display:-webkit-box;/*--- Androidブラウザ用 ---*/
+    display:-ms-flexbox;/*--- IE10 ---*/
+    display: -webkit-flex;/*--- safari（PC）用 ---*/
+    display:flex;
+}
+.fieldGrid2 .rnr-field.rnr-field.rnr-field.rnr-field > .rnr-label {
+    min-width: 150px;
+}
+label[for="value_yahoo_size_1"]{
+    display: block;
+}
+div[data-fieldname="yahoo_size"].rnr-field{
+    display: block;
+}
+#size_in{
+    width: 90%;
+    min-height: 400px;
+}
+.fieldGrid2 .rnr-field.rnr-field.rnr-field.rnr-field > .rnr-label , #size_in_ttl {
+    background-color: #adf;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    font-family: monospace;
+    margin: 0;
+}
+.rnr-field select, .rnr-field input {
+    padding: 2px 3px!important;
+    /*height: 100%!important;*/
+    line-height: 1.5;
+    font-size: 14px!important;
+    min-width: 300px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 0!important;
+}
+.rnr-field textarea{
+    padding: 2px 3px!important;
+    font-size: 14px!important;
+    min-width: 300px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 0!important;
+}
+.container[data-container="editpage"] {
+    background-color: #fff;
+    border: 1px solid #036;
+    border-bottom: none;
+    border-top: 20px solid #036;
+    padding-bottom: 5px;
+}
+#content_field .container{
+    background-color: #fff;
+    border: 1px solid #036;
+    border-top: none;
+    border-bottom: none;
+}
+.container {
+    padding: 0;
+}
+.container[data-container="bottombuttons"]{
+    background-color: #fff;
+    border: 1px solid #036;
+    border-top: none;
+}
+body{
+    background-color: #eee;
+}
+body h2{
+    font-size: 22px;
+    color: #111;
+}
+body .rnr-field {
+    width: 100%;
+    padding: 1px 5px;
+    background-color: #fff;
+    margin-bottom: 0;
+}
+div[data-fieldname="raku_tag_result"]{
+    display: none;
+}
+.rnr-field[data-fieldname='raku_title'] , .rnr-field[data-fieldname='yahoo_title'] , .rnr-field[data-fieldname='goods_title'] , .rnr-field[data-fieldname='yahoo_condition1'] , .rnr-field[data-fieldname='remark'] , .rnr-field[data-fieldname='yahoo_fuzokuhin']{
+    display: block;
+}
+.rnr-field[data-fieldname='raku_hyoujisaki_category'] , .rnr-field[data-fieldname='raku_hyoujisaki_category2'] , .rnr-field[data-fieldname='raku_hyoujisaki_category3'] , .rnr-field[data-fieldname='raku_hyoujisaki_category4'] , .rnr-field[data-fieldname='raku_hyoujisaki_category5']{
+    display: block;
+}
+#value_yahoo_condition1_1 , #value_remark_1 , #value_yahoo_fuzokuhin_1{
+    width: 100%!important;
+    min-height: 70px!important;
+}
+#value_raku_hyoujisaki_category_1 , #value_raku_hyoujisaki_category2_1 , #value_raku_hyoujisaki_category3_1 , #value_raku_hyoujisaki_category4_1 , #value_raku_hyoujisaki_category5_1{
+    width: 100%!important;
+    height: 50px!important;
+}
+#value_raku_title_1 , #value_yahoo_title_1 , #value_goods_title_1{
+    width: 100%!important;
+    height: 70px!important;
+}
+#raku_err_moji.ok_raku_para{
+    color: #0f0;
+    border: 2px solid #0f0;
+}
+#raku_err_moji.ng_raku_para {
+    border: 3px solid #f00;
+    color: #f00;
+    font-size: 14px;
+    padding: 5px;
+}
+.fieldGrid2{
+    width: 1100px!important;
+}
+.fieldGrid2 > tbody > tr > td{
+    width: 500px!important;
+}
+#value_yahoo_sozai_1 , #value_yahoo_color_1{
+    min-height: 50px!important;
+}
+#value_yahoo_size_1{
+    width: 100%!important;
+}

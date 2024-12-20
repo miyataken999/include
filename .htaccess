@@ -1,0 +1,9 @@
+#RewriteEngine on
+
+#RewriteCond %{REMOTE_ADDR} !^35\.189\.145\.255$
+#RewriteRule ^(.*)$ https://rifa.life%{REQUEST_URI} [R=301,L]
+
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>

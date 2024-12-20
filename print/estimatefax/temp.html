@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+<?
+if($ecc_id == ''){
+	print "顧客SEQがありません。";
+	exit();
+}
+
+
+include_once $_SERVER["DOCUMENT_ROOT"]."/include/classes/pdo_connect.php";
+
+$staff_pdo = new pdo_connect;
+$uid;
+$staff = $staff_pdo->select_one("SELECT first_name,user_id,english_name from users where user_id={$uid} limit 1");
+$staff_name_array = explode("　",$staff["first_name"]);
+$staff_name = $staff_name_array[0];
+
+
+$pdo = new pdo_connect;
+$query = "SELECT * FROM Eoc WHERE ecc_id={$ecc_id} LIMIT 1";
+$Eoc = $pdo->select_one($query);
+$week = array( "日", "月", "火", "水", "木", "金", "土" );
+
+
+?>
+<div id="all">
+	<img src="/include/print/xlogo.png" alt="">
+	<h1>お見積り送信表</h1>
+	<div class="time_block"><?=date("Y年n月d日").$week[date("w")]."曜日 ".date("H時i分s秒")?></div>
+	<div id="top_block">
+		<div class="row">
+			<div class="head">送信枚数：(本状含む)</div>
+			<div class="body">　１　枚</div>
+		</div>
+		<div class="row">
+			<div class="head">送信先：</div>
+			<div class="body"><?=$Eoc["name1"]?> さま</div>
+		</div>
+		<div class="row">
+			<div class="head">担当者：</div>
+			<div class="body"><?=$staff["first_name"]?></div>
+		</div>
+	</div><!-- end top_block -->
+	<div class="lounge_block">
+		<div class="row">
+			<div class="head">■住所</div>
+			<div class="body">東京都豊島区東池袋1-25-14</div>
+		</div>
+		<div class="row">
+			<div class="head">■社名</div>
+			<div class="body">ラウンジデザイナーズ株式会社</div>
+		</div>
+		<div class="row">
+			<div class="head">■屋号</div>
+			<div class="body">リファスタ</div>
+		</div>
+		<div class="row">
+			<div class="head">■Free Phone(11:00~18:00)</div>
+			<div class="body">0120-954-679</div>
+		</div>
+		<div class="row">
+			<div class="head">■電話(11:00~18:00)</div>
+			<div class="body">03-5985-0388</div>
+		</div>
+		<div class="row">
+			<div class="head">■FAX(24h)</div>
+			<div class="body">03-5985-0390</div>
+		</div>
+	</div><!-- end lounge_block -->
+	<div class="message_block">
+		平素よりご高配賜り、誠に有難うございます。<br>下記の通り、書類を送付致します。
+	</div><!-- end message_block -->
+	<div class="red_message_block">
+		お見積書受取り、または査定結果には、<br>FAXバック若しくはメール・ライン等でご返答ください。
+	</div><!-- end red_message_block -->
+	<div class="bottom_block">
+		<div class="blackbox">　</div>
+		<div class="row">
+			<div class="head">□見積書/計算書</div>
+			<div class="center">　</div>
+			<div class="body">1部</div>
+		</div>
+		<div class="row">
+			<div class="head">□お見積り送信表</div>
+			<div class="center">　</div>
+			<div class="body">1部</div>
+		</div>
+		<div class="row">
+			<div class="head">□</div>
+			<div class="center">　</div>
+			<div class="body">部</div>
+		</div>
+		<div class="row">
+			<div class="head">□</div>
+			<div class="center">　</div>
+			<div class="body">部</div>
+		</div>
+		<div class="blackbox">　</div>
+	</div><!-- end bottom_block -->
+
+</div><!-- end all -->
+<style type="text/css">
+	body{
+		-webkit-print-color-adjust: exact;
+		background-color: #ccc;
+		font-family: "Century Gothic","Avenir", "Open Sans", "Helvetica Neue", Helvetica, Arial, Verdana, Roboto, 游ゴシック, "Yu Gothic", 游ゴシック体, YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    	font-weight: 500;
+		background-color: #fff;
+    	height: 1300px;
+    	overflow: hidden;
+	}
+	img{
+		max-width: 100%;
+	}
+	#all{
+		/*width: 210mm;*/
+    	/*height: 297mm;*/
+    	margin: auto;
+		font-size: 30px;
+		padding: 30px 0px 0px;
+		background-color: #fff;
+	}
+	h1{
+		margin: 0;
+		font-size: 90px;
+		text-align: center;
+		font-weight: bold;
+	}
+	.time_block{
+		text-align: center;
+	}
+	.row{
+		overflow: hidden;
+	}
+	.row>div{
+		float: left;
+	}
+	#top_block .row .head{
+		width: 40%;
+	}
+	.row .head{
+		font-weight: bold;
+	}
+	#top_block .row .body{
+		width: 60%;
+	}
+	.lounge_block{
+		margin-top: 30px;
+		border: 2px solid #111;
+		padding: 10px;
+	}
+	.lounge_block .row{
+		border-bottom: 1px solid #111;
+	}
+	.lounge_block .row:last-child{
+		border-bottom: none;
+	}
+	.lounge_block .body{
+		float: right;
+		text-align: right;
+	}
+	.message_block{
+		margin: 30px 0;
+	}
+	.red_message_block{
+		margin: 30px 0;
+		color: #f00;
+		font-weight: bold;
+	}
+	.blackbox{
+		background-color: #111;
+	}
+	.bottom_block .row{
+		border-bottom: 1px solid #111;
+	}
+	.bottom_block .head{
+		width: 40%;
+	}
+	.bottom_block .center{
+		width: 40%;
+		border-left: 1px solid #111;
+		border-right: 1px solid #111;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.bottom_block .body{
+		width: 20%;
+		text-align: right;
+	}
+</style>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+#tokuteikokusaisyu {
+    position: fixed;
+    top: 70px;
+    right: 50px;
+    background-color: #f00;
+    padding: 20px;
+    border-radius: 30px;
+    border: 5px solid #111;
+    color: #111;
+    font-weight: bold;
+    text-align: center;
+    -webkit-animation: tokutei 0.5s linear infinite;
+       -moz-animation: tokutei 0.5s linear infinite;
+        -ms-animation: tokutei 0.5s linear infinite;
+         -o-animation: tokutei 0.5s linear infinite;
+            animation: tokutei 0.5s linear infinite;
+}
+@-webkit-keyframes tokutei {
+	0% { background-color: #f00; }
+	100% { background-color: #ff0; }
+}
+@-moz-keyframes tokutei {
+	0% { background-color: #f00; }
+	100% { background-color: #ff0; }
+}
+@-ms-keyframes tokutei {
+	0% { background-color: #f00; }
+	100% { background-color: #ff0; }
+}
+@-o-keyframes tokutei {
+	0% { background-color: #f00; }
+	100% { background-color: #ff0; }
+}
+@keyframes tokutei {
+	0% { background-color: #f00; }
+	100% { background-color: #ff0; }
+}
+	img{
+		width: 60px;
+		height: 60px;
+	}
+	a:hover{
+		opacity: 0.5;
+	}
+	table{
+		border: 1px solid;
+	}
+	td {
+	    padding: 5px;
+	    border: 1px solid;
+	}
+	#zip_edit_area table{
+		float: left;
+	}
+#zip_edit_area {
+    text-align: right;
+    position: fixed;
+    right: 0px;
+    bottom: 20px;
+    background-color: rgba(0,0,0,0.8);
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    color: #fff;
+    font-size: 18px;
+}
+#zip_edit_area select{
+	padding: 10px;
+}
+#submit:hover{
+	opacity: 0.5;
+	cursor: pointer;
+}
+#submit{
+	padding: 10px;
+	margin-right: 20px;
+}
+#rakuten_cabinet_name {
+    padding: 0 10px 10px;
+}
+#main_table{
+	/*margin-bottom: 500px;*/
+}
+#id_text{
+	display: inline-block;
+	margin-right: 20px;
+	font-size: 26px;
+}
+#new_eva_link a{
+	color: #111;
+	text-decoration: none;
+	display: inline-block;
+	padding: 15px 30px;
+	margin-right: 20px;
+	background-color: #ddd;
+	border: 2px solid #000;
+}
+#settei_table{
+	padding-left: 20px;
+}
+#set_st_up_area{
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: left;
+}
+#set_st_up_area .set_st_up:hover{
+	opacity: 0.5;
+}
+#set_st_up_area .set_st_up{
+	background-color: #dcdcdc;
+	border: 2px solid #111;
+	padding: 10px 10px;
+	width: 90px;
+	color: #111;
+	font-size: 12px;
+	display: inline-block;
+	cursor: pointer;
+}
+.kaigai_no{
+	background-color: #700;
+}
+
+
+

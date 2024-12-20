@@ -1,0 +1,44 @@
+<?php
+$dalTableusers1 = array();
+$dalTableusers1["user_id"] = array("type"=>3,"varname"=>"user_id");
+$dalTableusers1["user_login"] = array("type"=>200,"varname"=>"user_login");
+$dalTableusers1["user_password"] = array("type"=>200,"varname"=>"user_password");
+$dalTableusers1["first_name"] = array("type"=>200,"varname"=>"first_name");
+$dalTableusers1["last_name"] = array("type"=>200,"varname"=>"last_name");
+$dalTableusers1["title"] = array("type"=>200,"varname"=>"title");
+$dalTableusers1["group_id"] = array("type"=>3,"varname"=>"group_id");
+$dalTableusers1["phone_home"] = array("type"=>200,"varname"=>"phone_home");
+$dalTableusers1["phone_work"] = array("type"=>200,"varname"=>"phone_work");
+$dalTableusers1["phone_day"] = array("type"=>200,"varname"=>"phone_day");
+$dalTableusers1["phone_cell"] = array("type"=>200,"varname"=>"phone_cell");
+$dalTableusers1["phone_evening"] = array("type"=>200,"varname"=>"phone_evening");
+$dalTableusers1["fax"] = array("type"=>200,"varname"=>"fax");
+$dalTableusers1["email"] = array("type"=>200,"varname"=>"email");
+$dalTableusers1["notes"] = array("type"=>201,"varname"=>"notes");
+$dalTableusers1["card_number"] = array("type"=>200,"varname"=>"card_number");
+$dalTableusers1["card_expire_date"] = array("type"=>200,"varname"=>"card_expire_date");
+$dalTableusers1["country_id"] = array("type"=>3,"varname"=>"country_id");
+$dalTableusers1["state_id"] = array("type"=>3,"varname"=>"state_id");
+$dalTableusers1["city"] = array("type"=>200,"varname"=>"city");
+$dalTableusers1["zip"] = array("type"=>200,"varname"=>"zip");
+$dalTableusers1["address1"] = array("type"=>200,"varname"=>"address1");
+$dalTableusers1["address2"] = array("type"=>200,"varname"=>"address2");
+$dalTableusers1["address3"] = array("type"=>200,"varname"=>"address3");
+$dalTableusers1["date_add"] = array("type"=>135,"varname"=>"date_add");
+$dalTableusers1["date_last_login"] = array("type"=>135,"varname"=>"date_last_login");
+$dalTableusers1["ip_add"] = array("type"=>200,"varname"=>"ip_add");
+$dalTableusers1["ip_update"] = array("type"=>200,"varname"=>"ip_update");
+$dalTableusers1["language_id"] = array("type"=>3,"varname"=>"language_id");
+$dalTableusers1["image_url"] = array("type"=>200,"varname"=>"image_url");
+$dalTableusers1["age_id"] = array("type"=>3,"varname"=>"age_id");
+$dalTableusers1["gender_id"] = array("type"=>3,"varname"=>"gender_id");
+$dalTableusers1["education_id"] = array("type"=>3,"varname"=>"education_id");
+$dalTableusers1["income_id"] = array("type"=>3,"varname"=>"income_id");
+$dalTableusers1["user_SSN"] = array("type"=>200,"varname"=>"user_SSN");
+$dalTableusers1["total_purchase"] = array("type"=>3,"varname"=>"total_purchase");
+$dalTableusers1["tatal_sales"] = array("type"=>3,"varname"=>"tatal_sales");
+$dalTableusers1["template"] = array("type"=>201,"varname"=>"template");
+	$dalTableusers1["user_id"]["key"]=true;
+
+$dal_info["internet_at_urlounge_co_jp__users1"] = &$dalTableusers1;
+?>

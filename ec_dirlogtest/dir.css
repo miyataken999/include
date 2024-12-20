@@ -1,0 +1,81 @@
+body{
+	background-color: #eee;
+}
+	#raku_dir_ara input , #yahoo_dir_ara input{
+		display: none;
+	}
+	select{
+		display: inline-block;
+		padding: 5px 10px;
+	}
+	.title{
+		background-color: #111;
+		color: #fff;
+		padding: 5px 20px;
+	}
+	.res_ttl{
+		background-color: #ffc;
+		color: #555;
+		padding: 5px 20px;
+	}
+	#res_id_count , #yahoo_res_id_count{
+		display: none;
+	}
+	#raku_result_id_ttl{
+		width: 150px;
+		display: inline-block;
+		padding: 5px 20px;
+	}
+	#yahoo_result_id_ttl{
+		width: 150px;
+		display: inline-block;
+		padding: 5px 20px;
+	}
+	#rakuten_result_area span , #yahoo_result_area span{
+	    border: 1px solid #333;
+	    padding: 5px 20px;
+	    background-color: #faa;
+	}
+	#brand_kashira_area{
+		display: none;
+	}
+	#brand_name_area{
+		border-collapse: collapse;
+	}
+	#brand_name_area th{
+		font-weight: normal;
+		background-color: #ffc;
+		border: 1px solid #aaa;
+		padding: 5px;
+	}
+	#brand_name_area td{
+		border: 1px solid #aaa;
+		background-color: #fff;
+		padding: 5px;
+	}
+	#judgment_btn_sub{
+		margin-bottom: 20px;
+	}
+#judgment_btn , #judgment_btn_sub {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #111;
+    padding: 5px 15px;
+    font-size: 16px;
+    width: 200px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+#judgment_btn:focus , #judgment_btn:hover , #judgment_btn_sub:focus , #judgment_btn_sub:hover{
+	background-color: #dcdcdc;
+	border: 5px solid #00f;
+	cursor: pointer;
+}
+.ec_area {
+    background-color: #fff;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #555;
+    min-height: 200px;
+}

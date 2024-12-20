@@ -1,0 +1,50 @@
+span[id*="MATERIAL"] select{
+    width: auto!important;
+}
+span[id*="gold_property"] select{
+    width: auto!important;
+}
+span[id*="Appraiser"] select{
+    width: auto!important;
+}
+span[id*="Discrimination"] select{
+    width: auto!important;
+}
+span[id*="title"] textarea{
+    width: 300px!important;
+    height: 120px!important;
+}
+
+.rnr-search-highlight {
+    display: inline!important;
+}
+
+
+select {
+    width: 70px!important;
+    font-size: 12px!important;
+    padding: 0px!important;
+    border-radius: 0px!important;
+    height: auto!important;
+    line-height: 1!important;
+    box-shadow: none!important;
+}
+input[type="text"] {
+    min-width: 150px!important;
+    font-size: 12px!important;
+    padding: 0px!important;
+    border-radius: 0px!important;
+    height: auto!important;
+    line-height: 1!important;
+    box-shadow: none!important;
+    width: auto!important;
+}
+.searchOptions.panel.panel-primary.searchPanelContainer {
+    padding-bottom: 250px;
+}
+.searchOptions.panel.panel-primary.searchPanelContainer select{
+    width: auto!important;
+}
+select[id*="hall_mark"]{
+    width: 140px!important;
+}

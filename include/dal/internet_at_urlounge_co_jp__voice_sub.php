@@ -1,0 +1,45 @@
+<?php
+$dalTablevoice_sub = array();
+$dalTablevoice_sub["id"] = array("type"=>3,"varname"=>"id");
+$dalTablevoice_sub["voice_id"] = array("type"=>3,"varname"=>"voice_id");
+$dalTablevoice_sub["subject"] = array("type"=>201,"varname"=>"subject");
+$dalTablevoice_sub["link"] = array("type"=>200,"varname"=>"link");
+$dalTablevoice_sub["date"] = array("type"=>200,"varname"=>"date");
+$dalTablevoice_sub["zip_name"] = array("type"=>200,"varname"=>"zip_name");
+$dalTablevoice_sub["goods_name"] = array("type"=>200,"varname"=>"goods_name");
+$dalTablevoice_sub["cal_price"] = array("type"=>200,"varname"=>"cal_price");
+$dalTablevoice_sub["goods_category"] = array("type"=>200,"varname"=>"goods_category");
+$dalTablevoice_sub["brand"] = array("type"=>200,"varname"=>"brand");
+$dalTablevoice_sub["brand_category"] = array("type"=>200,"varname"=>"brand_category");
+$dalTablevoice_sub["hinmoku"] = array("type"=>200,"varname"=>"hinmoku");
+$dalTablevoice_sub["page_category"] = array("type"=>200,"varname"=>"page_category");
+$dalTablevoice_sub["page_num"] = array("type"=>200,"varname"=>"page_num");
+$dalTablevoice_sub["page_master"] = array("type"=>200,"varname"=>"page_master");
+$dalTablevoice_sub["page_regist"] = array("type"=>3,"varname"=>"page_regist");
+$dalTablevoice_sub["detail"] = array("type"=>201,"varname"=>"detail");
+$dalTablevoice_sub["seq"] = array("type"=>200,"varname"=>"seq");
+$dalTablevoice_sub["preview_dia"] = array("type"=>3,"varname"=>"preview_dia");
+$dalTablevoice_sub["preview_kin"] = array("type"=>3,"varname"=>"preview_kin");
+$dalTablevoice_sub["preview_brand"] = array("type"=>3,"varname"=>"preview_brand");
+$dalTablevoice_sub["preview_dia_tegami"] = array("type"=>3,"varname"=>"preview_dia_tegami");
+$dalTablevoice_sub["preveiw_kin_tegami"] = array("type"=>3,"varname"=>"preveiw_kin_tegami");
+$dalTablevoice_sub["preview_kin_brand"] = array("type"=>3,"varname"=>"preview_kin_brand");
+$dalTablevoice_sub["dia_jisseki_id"] = array("type"=>201,"varname"=>"dia_jisseki_id");
+$dalTablevoice_sub["did_grade"] = array("type"=>201,"varname"=>"did_grade");
+$dalTablevoice_sub["dia_kanteisho"] = array("type"=>201,"varname"=>"dia_kanteisho");
+$dalTablevoice_sub["dia_okyakusama_shousai"] = array("type"=>201,"varname"=>"dia_okyakusama_shousai");
+$dalTablevoice_sub["dia_otorihiki_keiai"] = array("type"=>201,"varname"=>"dia_otorihiki_keiai");
+$dalTablevoice_sub["dia_souhyou"] = array("type"=>201,"varname"=>"dia_souhyou");
+$dalTablevoice_sub["category_1"] = array("type"=>3,"varname"=>"category_1");
+$dalTablevoice_sub["category_2"] = array("type"=>200,"varname"=>"category_2");
+$dalTablevoice_sub["category_21"] = array("type"=>3,"varname"=>"category_21");
+$dalTablevoice_sub["category_22"] = array("type"=>3,"varname"=>"category_22");
+$dalTablevoice_sub["category_31"] = array("type"=>3,"varname"=>"category_31");
+$dalTablevoice_sub["category_32"] = array("type"=>3,"varname"=>"category_32");
+$dalTablevoice_sub["img_pass"] = array("type"=>201,"varname"=>"img_pass");
+$dalTablevoice_sub["href_pass"] = array("type"=>201,"varname"=>"href_pass");
+$dalTablevoice_sub["voice_date"] = array("type"=>135,"varname"=>"voice_date");
+	$dalTablevoice_sub["id"]["key"]=true;
+
+$dal_info["internet_at_urlounge_co_jp__voice_sub"] = &$dalTablevoice_sub;
+?>

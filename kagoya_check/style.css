@@ -1,0 +1,216 @@
+#eoc_after_data_table .mismatch td span {
+    background-color: #f00;
+    color: #fff;
+}
+#eoc_after_data_table .copy_btn {
+    border: 1px solid;
+    width: 35px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    font-size: 25px;
+    margin: 5px auto;
+    padding: 0;
+    background-color: #bbb;
+    cursor: pointer;
+}
+#eoc_after_data_table .copy_btn:hover{
+    opacity: 0.5;
+}
+.return_btn{
+    width: 250px;
+}
+.return_btn a{
+    display: block;
+    color: #111;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 3px 10px;
+    border: 1px solid #111;
+    text-decoration: none;
+}
+#sousin_name_box form{
+    display: inline-block;
+}
+#sousin_name_box{
+    color: #111;
+    width: 250px;
+    text-align: center;
+    margin: 30px auto 0;
+    padding: 3px 10px;
+    border: 1px solid #111;
+}
+#sousin_name{
+    display: inline-block;
+}
+#main_table .delete_label {
+    display: block;
+    cursor: pointer;
+    background-color: #efefef;
+    border: 1px solid #111;
+    margin: 0 10px;
+    font-size: 12px;
+}
+#main_table .reflect_label {
+    display: block;
+    cursor: pointer;
+    background-color: #efefef;
+    border: 1px solid #111;
+    margin: 0 10px;
+    font-size: 12px;
+}
+#main_table .delete_label:hover,#main_table .reflect_label:hover{
+    opacity: 0.5;
+}
+#delete_btn{
+    padding: 3px 10px;
+    border: 1px solid #111;
+    font-size: 16px;
+    width: 250px;
+    text-align: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+#main_table .delete_check {
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 5px auto;
+}
+#eoc_after_data_table_form .submit_box{
+    width: 200px;
+    margin: 15px auto;
+}
+.col_HTTP_REFERER span , .col_REMOTE_HOST span , .col_USER_AGENT span{
+    max-width: 60px;
+}
+#eoc_after_data_table input[type="text"] , #eoc_after_data_table select , #eoc_after_data_table textarea{
+    min-width: 200px;
+    padding: 2px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+#eoc_after_data_table textarea[name="bikou"],
+#eoc_after_data_table textarea[name="timeline_text"]{
+    width: 400px;
+    height: 250px;
+}
+#eoc_after_data_table textarea[name="eoc_search_keyword"]{
+    width: 200px;
+    height: 50px;
+}
+#eoc_after_data_table textarea[name="kit_detail"]{
+    width: 200px;
+    height: 100px;
+}
+
+#main_table,#eoc_table,#eoc_after_data_table{
+	border-collapse: collapse;
+	border-spacing: 0;
+    width: 98%;
+    margin: auto;
+}
+#main_table th ,#eoc_table th , #eoc_after_data_table th{
+    border: 1px solid #dcdcdc;
+    background-color: #16b7f5;
+}
+#eoc_after_data_table th span{
+    font-weight: normal;
+    color: #fff;
+}
+#main_table th span, #eoc_table th span {
+    padding: 5px;
+    font-weight: normal;
+    color: #fff;
+    writing-mode: vertical-lr;
+    max-width: 50px;
+    height: 150px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2;
+    width: 30px;
+}
+
+#main_table td ,#eoc_table td ,#eoc_after_data_table td{
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+}
+#main_table td span ,#eoc_table td span ,#eoc_after_data_table td span{
+    display: block;
+    font-size: 12px;
+    color: #555;
+    font-family: monospace;
+    padding: 5px;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+#main_table .col_user_mail span ,#eoc_table .col_user_mail span ,#eoc_table .col_mail1 span ,#eoc_after_data_table .col_user_mail span ,#eoc_after_data_table .col_mail1 span{
+    width: 50px;
+    overflow-wrap: break-word;
+}
+.td_bikou span , .td_mail_text span , .td_remark span{
+	width: 100px;
+}
+.td_cv_site span{
+    width: 40px;
+}
+.td_kit_detail span{
+	max-width: 110px;
+}
+#takuhai_eoc_sakaime{
+
+}
+
+#Eoc_takuhai_up_Eoc{
+    margin-top: 15px;
+}
+#Eoc_takuhai_up_Eoc input[type='radio']{
+    /*display: none;*/
+}
+#Eoc_takuhai_up_Eoc label {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #bcbcbc;
+    color: #333;
+    border-radius: 3px;
+}
+#Eoc_takuhai_up_Eoc input:checked+label{
+    background-color: #00f;
+    color: #fff;
+}
+#to_Eoc_submit{
+    display: block;
+    padding: 5px 10px;
+    margin-top: 15px;
+}
+#to_Eoc_submit:focus {
+    font-size: 16px;
+    background-color: #00f;
+    color: #fff;
+}
+#eoc_table .ecc_row:hover td{
+    background-color: #dcdcdc;
+    border-color: #fff;
+}
+.kousin_id_box input:checked {
+    width: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(/include/img/radio_check_on.png) no-repeat 100%;
+    display: block;
+    height: 30px;
+}
+.kousin_id_box input{
+    width: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(/include/img/radio_check_off.png) no-repeat 100%;
+    display: block;
+    height: 30px;
+}
